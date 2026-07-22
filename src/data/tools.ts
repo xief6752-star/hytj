@@ -952,6 +952,606 @@ export const TOOLS: Tool[] = [
       },
     ],
   },
+  {
+    slug: "gemini",
+    category: "ai",
+    logo: "✨",
+    color: "#4285f4",
+    officialUrl: "https://gemini.google.com",
+    founded: "2023-12-06",
+    founder: "Google DeepMind",
+    headquarter: "Mountain View, CA, USA",
+    name: { zh: "Google Gemini", en: "Google Gemini", ar: "Google Gemini" },
+    tagline: { zh: "谷歌最强多模态 AI 助手", en: "Google's Most Capable Multimodal AI Assistant", ar: "أقوى مساعد ذكاء اصطناعي متعدد الوسائط من Google" },
+    description: { zh: "由 Google DeepMind 开发的原生多模态 AI 模型，深度集成 Google 搜索、Gmail、Docs 等生态。", en: "A natively multimodal AI model built by Google DeepMind, deeply integrated with Google Search, Gmail, Docs and more.", ar: "نموذج ذكاء اصطناعي متعدد الوسائط بشكل أصلي طوّرته Google DeepMind، ومدمج بعمق مع Google Search وGmail وDocs." },
+    longDescription: { zh: "Gemini（原名 Bard）是 Google 推出的对话式 AI 助手，基于 Gemini 系列大模型（Ultra、Pro、Nano）。作为原生多模态模型，Gemini 从训练之初就同时理解文本、图像、音频、视频与代码。凭借与 Google 搜索、Workspace、Android 系统的深度集成，Gemini 在信息实时性和生态协同方面独具优势，是 ChatGPT 最主要的竞争对手之一。", en: "Gemini (formerly Bard) is Google's conversational AI assistant, powered by the Gemini family of models (Ultra, Pro, Nano). As a natively multimodal model, Gemini was trained from the ground up to understand text, images, audio, video and code simultaneously. Its deep integration with Google Search, Workspace and Android gives it unique strengths in real-time information and ecosystem synergy, making it one of ChatGPT's fiercest rivals.", ar: "Gemini (المعروف سابقاً باسم Bard) هو مساعد المحادثة الذكي من Google، ويعتمد على عائلة نماذج Gemini (Ultra وPro وNano). كنموذج متعدد الوسائط بشكل أصلي، تم تدريب Gemini من البداية لفهم النصوص والصور والصوت والفيديو والأكواد في آن واحد. يمنحه تكامله العميق مع Google Search وWorkspace ونظام Android قوةً فريدة في المعلومات الفورية والتناغم مع النظام البيئي." },
+    history: { zh: "Google 于 2023 年 3 月推出对话 AI 产品 Bard，作为对 ChatGPT 的回应。2023 年 12 月，Google 正式发布 Gemini 系列模型，并将 Bard 更名为 Gemini。2024 年 2 月推出 Gemini Advanced（$20/月），提供 Ultra 级别能力。2024 年底推出 Gemini 2.0，具备原生工具调用和 Agent 能力。作为 Google 全面 AI 化战略的核心产品，Gemini 已集成到 Google 搜索的 AI Overviews、Pixel 手机、Android 系统以及 Workspace 全套办公产品中。", en: "Google launched Bard in March 2023 as its answer to ChatGPT. In December 2023, Google officially unveiled the Gemini model family and renamed Bard to Gemini. Gemini Advanced ($20/month) launched in February 2024 with Ultra-tier capabilities. Gemini 2.0, released in late 2024, introduced native tool use and agentic capabilities. As the flagship of Google's AI-first strategy, Gemini now powers Search's AI Overviews, Pixel phones, Android, and the entire Workspace suite.", ar: "أطلقت Google خدمة Bard في مارس 2023 كردٍّ على ChatGPT. وفي ديسمبر 2023، كشفت رسمياً عن عائلة نماذج Gemini وأعادت تسمية Bard إلى Gemini. أُطلقت خطة Gemini Advanced (بـ 20 دولاراً شهرياً) في فبراير 2024 بقدرات من فئة Ultra. ثم جاء إصدار Gemini 2.0 أواخر 2024 مع دعم أصلي للأدوات والقدرات التنفيذية. وباعتباره منتج Google الرئيسي في استراتيجيتها المرتكزة على الذكاء الاصطناعي، يشغّل Gemini الآن ملخصات البحث والهواتف Pixel ونظام Android ومجموعة Workspace بالكامل." },
+    features: [
+      {
+        icon: "🖼️",
+        title: { zh: "原生多模态", en: "Native Multimodality", ar: "متعدد الوسائط أصلياً" },
+        desc: { zh: "同时处理文本、图像、音频、视频输入，跨模态推理能力强", en: "Simultaneously handles text, images, audio, and video with strong cross-modal reasoning", ar: "يعالج النصوص والصور والصوت والفيديو في آن واحد مع استدلال قوي عبر الوسائط" },
+      },
+      {
+        icon: "🔍",
+        title: { zh: "实时联网", en: "Live Web Access", ar: "الوصول الحي للويب" },
+        desc: { zh: "深度集成 Google 搜索，实时获取最新信息，标注来源", en: "Deeply integrated with Google Search for real-time information with citations", ar: "متكامل بعمق مع بحث Google للحصول على معلومات فورية مع الاستشهادات" },
+      },
+      {
+        icon: "📊",
+        title: { zh: "超长上下文", en: "Ultra-Long Context", ar: "سياق طويل جداً" },
+        desc: { zh: "Gemini 1.5 Pro 支持 200 万 token 上下文，可处理小时级视频", en: "Gemini 1.5 Pro supports a 2M token context window, processing hours of video", ar: "يدعم Gemini 1.5 Pro نافذة سياق تصل إلى مليوني رمز لمعالجة ساعات من الفيديو" },
+      },
+      {
+        icon: "🧩",
+        title: { zh: "Workspace 集成", en: "Workspace Integration", ar: "تكامل مع Workspace" },
+        desc: { zh: "直接在 Gmail、Docs、Sheets、Slides 中调用 AI 辅助", en: "Invoke AI directly inside Gmail, Docs, Sheets, and Slides", ar: "استدعاء الذكاء الاصطناعي مباشرة داخل Gmail وDocs وSheets وSlides" },
+      },
+      {
+        icon: "📱",
+        title: { zh: "Android 深度整合", en: "Android Assistant", ar: "مساعد Android" },
+        desc: { zh: "取代 Google Assistant，成为 Pixel/Samsung 手机的默认助手", en: "Replaces Google Assistant as the default helper on Pixel and Samsung devices", ar: "يحل محل Google Assistant كمساعد افتراضي على هواتف Pixel وSamsung" },
+      },
+      {
+        icon: "🎨",
+        title: { zh: "Imagen 图像生成", en: "Imagen Image Generation", ar: "توليد الصور Imagen" },
+        desc: { zh: "内置 Imagen 3 图像生成能力，直接在对话中生成高质量图片", en: "Built-in Imagen 3 image generation for high-quality visuals in chat", ar: "توليد صور مدمج بتقنية Imagen 3 لإنتاج صور عالية الجودة داخل المحادثة" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "访问 Gemini", en: "Visit Gemini", ar: "زيارة Gemini" },
+        desc: { zh: "前往 gemini.google.com，使用 Google 账号登录，国内需科学上网", en: "Go to gemini.google.com and sign in with your Google account (VPN required in China)", ar: "توجه إلى gemini.google.com وسجل الدخول بحساب Google (يتطلب VPN في الصين)" },
+      },
+      {
+        title: { zh: "选择版本", en: "Choose Tier", ar: "اختيار الباقة" },
+        desc: { zh: "免费版可用 Gemini 1.5 Flash，Advanced ($20/月) 解锁 1.5 Pro 与 2.0 Ultra", en: "Free tier uses Gemini 1.5 Flash; Advanced ($20/mo) unlocks 1.5 Pro and 2.0 Ultra", ar: "الباقة المجانية تستخدم Gemini 1.5 Flash، بينما Advanced (20 دولاراً شهرياً) تفتح 1.5 Pro و2.0 Ultra" },
+      },
+      {
+        title: { zh: "上传多模态输入", en: "Upload Multimodal", ar: "رفع مدخلات متعددة" },
+        desc: { zh: "拖拽图片、PDF、音频、视频文件到对话框，Gemini 可综合理解", en: "Drag images, PDFs, audio, or video files into the chat for combined understanding", ar: "اسحب الصور أو PDF أو الصوت أو الفيديو إلى المحادثة لفهم متكامل" },
+      },
+      {
+        title: { zh: "调用 Extensions", en: "Use Extensions", ar: "استخدام الإضافات" },
+        desc: { zh: "开启 @Gmail、@Maps、@YouTube 等扩展直接在对话中调用 Google 服务", en: "Enable @Gmail, @Maps, @YouTube extensions to call Google services in-chat", ar: "قم بتفعيل إضافات @Gmail و@Maps و@YouTube لاستدعاء خدمات Google داخل المحادثة" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "Gemini 在国内可以用吗？", en: "Is Gemini available in China?", ar: "هل Gemini متاح في الصين؟" },
+        a: { zh: "Gemini 在中国大陆无法直接访问，必须使用科学上网工具，且 Google 账号需要非中国大陆手机号验证。", en: "Gemini is not accessible in mainland China. A VPN is required, and Google accounts must be verified with a non-China phone number.", ar: "Gemini غير متاح في الصين القارية. يجب استخدام VPN، وحسابات Google تحتاج للتحقق برقم هاتف خارج الصين." },
+      },
+      {
+        q: { zh: "Gemini 和 ChatGPT 相比如何？", en: "How does Gemini compare to ChatGPT?", ar: "كيف يقارن Gemini بـ ChatGPT؟" },
+        a: { zh: "Gemini 在实时信息、多模态（尤其视频）和 Google 生态集成方面领先；ChatGPT 在推理深度、写作风格和插件生态方面更成熟。两者定期迭代，各有胜负。", en: "Gemini leads in real-time information, multimodality (especially video), and Google ecosystem integration. ChatGPT is more mature in reasoning depth, writing style, and plugin ecosystem. Both iterate rapidly with different strengths.", ar: "يتفوق Gemini في المعلومات الفورية والوسائط المتعددة (خاصة الفيديو) وتكامل نظام Google. أما ChatGPT فأكثر نضجاً في عمق الاستدلال وأسلوب الكتابة ونظام الإضافات." },
+      },
+    ],
+  },
+  {
+    slug: "telegram",
+    category: "social",
+    logo: "✈️",
+    color: "#0088cc",
+    officialUrl: "https://telegram.org",
+    founded: "2013-08-14",
+    founder: "Pavel Durov, Nikolai Durov",
+    headquarter: "Dubai, UAE",
+    name: { zh: "Telegram", en: "Telegram", ar: "Telegram" },
+    tagline: { zh: "全球最安全、最快的即时通讯软件", en: "The World's Most Secure & Fastest Messenger", ar: "أسرع وأكثر تطبيقات المراسلة أماناً في العالم" },
+    description: { zh: "以隐私加密、超大群组、丰富机器人生态闻名的即时通讯工具，全球月活用户超过 10 亿。", en: "A cloud-based messenger renowned for privacy encryption, massive group chats, and a rich bot ecosystem, with over 1 billion monthly active users.", ar: "تطبيق مراسلة سحابي مشهور بالتشفير والخصوصية والمجموعات الضخمة ونظام روبوتات غني، مع أكثر من مليار مستخدم نشط شهرياً." },
+    longDescription: { zh: "Telegram（电报）由俄罗斯裔企业家帕维尔·杜罗夫创立，是一款以隐私、速度和开放性著称的跨平台即时通讯软件。支持最多 20 万人的超级群组、无限容量的频道广播、端到端加密的秘密聊天、几乎无所不能的 Bot API 生态。Telegram 在加密货币、跨境电商、AI 社群、翻墙工具用户中拥有极高的渗透率。", en: "Telegram is a cross-platform messaging app founded by Russian-born entrepreneur Pavel Durov, known for its focus on privacy, speed, and openness. It supports supergroups of up to 200,000 members, unlimited broadcast channels, end-to-end encrypted Secret Chats, and an almost limitless Bot API ecosystem. Telegram is deeply popular among crypto communities, cross-border e-commerce, AI groups, and users of VPN tools.", ar: "Telegram هو تطبيق مراسلة عبر الأنظمة، أسسه رجل الأعمال الروسي بافيل دوروف، ويشتهر بتركيزه على الخصوصية والسرعة والانفتاح. يدعم المجموعات الفائقة حتى 200 ألف عضو، والقنوات البثية غير المحدودة، ومحادثات سرية بتشفير من طرف إلى طرف، ونظام Bot API شبه غير محدود. يحظى Telegram بشعبية واسعة بين مجتمعات العملات المشفرة والتجارة الإلكترونية عبر الحدود ومجموعات الذكاء الاصطناعي ومستخدمي أدوات VPN." },
+    history: { zh: "Telegram 由帕维尔·杜罗夫和其兄尼古拉·杜罗夫于 2013 年在俄罗斯创立。此前帕维尔创办的 VK（俄罗斯最大社交网络）因拒绝向俄政府交出用户数据被迫出售，之后他离开俄罗斯，将 Telegram 团队搬迁至迪拜。Telegram 以「不做广告、不融资、拒绝合作监控」的理念持续运营，主要靠杜罗夫个人资金支撑。2024 年 8 月，帕维尔·杜罗夫在法国被短暂拘留，将 Telegram 的内容审核政策推上风口浪尖。2024 年，Telegram 月活突破 10 亿，正式成为全球第五大社交应用。", en: "Telegram was founded in 2013 by Pavel Durov and his brother Nikolai in Russia. Pavel previously founded VK, Russia's largest social network, which he was forced to sell after refusing to hand over user data to the Russian government. He left Russia and moved Telegram's team to Dubai. Telegram operates on a strict 'no ads, no VC funding, no cooperation with surveillance' philosophy, historically funded by Pavel personally. In August 2024, Pavel Durov was briefly detained in France, thrusting Telegram's moderation policies into the spotlight. Also in 2024, Telegram crossed 1 billion monthly active users, cementing its place as the world's fifth-largest social app.", ar: "أسس بافيل دوروف وشقيقه نيكولاي تطبيق Telegram عام 2013 في روسيا. كان بافيل قد أسس سابقاً شبكة VK، أكبر شبكة تواصل روسية، لكنه اضطر لبيعها بعد رفضه تسليم بيانات المستخدمين للحكومة الروسية. غادر روسيا ونقل فريق Telegram إلى دبي. يعمل Telegram وفق فلسفة صارمة: 'لا إعلانات، لا تمويل مغامر، ولا تعاون مع الرقابة'، وقد موّله بافيل شخصياً لسنوات. في أغسطس 2024، احتُجز بافيل دوروف لفترة قصيرة في فرنسا، مما سلط الضوء على سياسات إشراف Telegram. وفي نفس العام، تجاوز عدد المستخدمين النشطين شهرياً مليار مستخدم، ليصبح خامس أكبر تطبيق تواصل اجتماعي عالمياً." },
+    features: [
+      {
+        icon: "🔒",
+        title: { zh: "秘密聊天加密", en: "Secret Chats Encryption", ar: "دردشات سرية مشفرة" },
+        desc: { zh: "端到端加密的秘密聊天，支持自毁消息与截屏检测", en: "End-to-end encrypted Secret Chats with self-destruct timers and screenshot detection", ar: "دردشات سرية بتشفير من طرف إلى طرف مع مؤقتات تدمير ذاتي وكشف لقطات الشاشة" },
+      },
+      {
+        icon: "👥",
+        title: { zh: "超级群组", en: "Massive Supergroups", ar: "مجموعات فائقة" },
+        desc: { zh: "支持最多 20 万人的群组，媲美论坛的多话题讨论功能", en: "Groups of up to 200,000 members with forum-style topic threads", ar: "مجموعات تصل إلى 200 ألف عضو مع مواضيع منفصلة على نمط المنتديات" },
+      },
+      {
+        icon: "📢",
+        title: { zh: "频道广播", en: "Broadcast Channels", ar: "قنوات البث" },
+        desc: { zh: "面向无限订阅用户的单向广播频道，是内容创作者的重要阵地", en: "One-way broadcast channels with unlimited subscribers, a key content creator hub", ar: "قنوات بث أحادية الاتجاه مع مشتركين غير محدودين، منصة رئيسية لصانعي المحتوى" },
+      },
+      {
+        icon: "🤖",
+        title: { zh: "Bot 生态", en: "Bot Ecosystem", ar: "نظام الروبوتات" },
+        desc: { zh: "开放 Bot API，机器人可实现支付、AI 对话、Mini App 等丰富功能", en: "Open Bot API enables payments, AI chats, Mini Apps, and countless integrations", ar: "واجهة برمجة روبوتات مفتوحة تدعم المدفوعات ومحادثات الذكاء الاصطناعي وتطبيقات Mini App" },
+      },
+      {
+        icon: "☁️",
+        title: { zh: "云端同步", en: "Cloud Sync", ar: "المزامنة السحابية" },
+        desc: { zh: "所有消息、文件、媒体存储在云端，多设备无缝同步", en: "All messages, files, and media stored in the cloud with seamless multi-device sync", ar: "تُخزَّن جميع الرسائل والملفات في السحابة مع مزامنة سلسة عبر الأجهزة" },
+      },
+      {
+        icon: "💎",
+        title: { zh: "Premium 会员", en: "Telegram Premium", ar: "اشتراك Premium" },
+        desc: { zh: "订阅 Premium 解锁 4GB 文件上传、更多贴纸、独家表情反应", en: "Premium unlocks 4GB uploads, extra stickers, and exclusive reactions", ar: "يفتح Premium تحميلات حتى 4 جيجابايت والمزيد من الملصقات وردود الفعل الحصرية" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "下载客户端", en: "Install App", ar: "تثبيت التطبيق" },
+        desc: { zh: "在应用商店下载 Telegram，支持 iOS、Android、Windows、Mac、Linux 及网页版", en: "Download Telegram from your app store; supports iOS, Android, Windows, Mac, Linux and web", ar: "نزّل Telegram من متجر التطبيقات؛ يدعم iOS وAndroid وWindows وMac وLinux والويب" },
+      },
+      {
+        title: { zh: "验证手机号", en: "Verify Phone", ar: "التحقق من الهاتف" },
+        desc: { zh: "使用手机号注册接收短信验证码，中国大陆号码可注册但登录需要科学上网", en: "Register with your phone number and receive an SMS code. China phone numbers work but a VPN is needed to connect", ar: "سجّل برقم هاتفك واستلم رمز التحقق عبر SMS. أرقام الصين تعمل لكن الاتصال يحتاج VPN" },
+      },
+      {
+        title: { zh: "加入频道群组", en: "Join Channels", ar: "الانضمام للقنوات" },
+        desc: { zh: "通过 t.me 邀请链接或用户名搜索加入感兴趣的频道和群组", en: "Join channels and groups via t.me invite links or username search", ar: "انضم للقنوات والمجموعات عبر روابط t.me أو البحث بأسماء المستخدمين" },
+      },
+      {
+        title: { zh: "启用秘密聊天", en: "Start Secret Chat", ar: "بدء دردشة سرية" },
+        desc: { zh: "在联系人页面点击「新建秘密聊天」开启端到端加密对话", en: "Tap 'New Secret Chat' on the contact page to start an end-to-end encrypted conversation", ar: "انقر على 'دردشة سرية جديدة' في صفحة جهة الاتصال لبدء محادثة مشفرة من طرف إلى طرف" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "Telegram 在国内可以用吗？", en: "Can I use Telegram in China?", ar: "هل يمكن استخدام Telegram في الصين؟" },
+        a: { zh: "Telegram 在中国大陆被封锁，需要使用科学上网工具连接。注册可用国内手机号，但如果账号被判定为违规可能被限制。", en: "Telegram is blocked in mainland China; a VPN is required to connect. Chinese phone numbers can register, but accounts flagged for policy issues may be restricted.", ar: "Telegram محجوب في الصين القارية ويحتاج VPN. يمكن التسجيل برقم صيني لكن قد تُقيَّد الحسابات المخالفة للسياسات." },
+      },
+      {
+        q: { zh: "Telegram 真的比 WhatsApp 更安全吗？", en: "Is Telegram really more secure than WhatsApp?", ar: "هل Telegram أكثر أماناً من WhatsApp حقاً؟" },
+        a: { zh: "普通聊天并非端到端加密（存于云端），只有主动发起的「秘密聊天」才是端到端加密。WhatsApp 所有聊天默认端到端加密。要极致隐私，Signal 是更好的选择。", en: "Regular chats are NOT end-to-end encrypted (they're stored in the cloud); only 'Secret Chats' are E2E encrypted. WhatsApp encrypts all chats by default. For maximum privacy, Signal is the stronger choice.", ar: "الدردشات العادية ليست مشفرة من طرف إلى طرف (تُخزَّن في السحابة)، فقط 'الدردشات السرية' مشفرة كلياً. أما WhatsApp فيشفر جميع المحادثات افتراضياً. للخصوصية القصوى، Signal خيار أقوى." },
+      },
+    ],
+  },
+  {
+    slug: "linkedin",
+    category: "social",
+    logo: "💼",
+    color: "#0a66c2",
+    officialUrl: "https://www.linkedin.com",
+    founded: "2003-05-05",
+    founder: "Reid Hoffman, Allen Blue, Konstantin Guericke, Eric Ly, Jean-Luc Vaillant",
+    headquarter: "Sunnyvale, CA, USA",
+    name: { zh: "LinkedIn", en: "LinkedIn", ar: "LinkedIn" },
+    tagline: { zh: "全球最大的职场社交与招聘平台", en: "The World's Largest Professional Networking Platform", ar: "أكبر شبكة تواصل مهني وتوظيف في العالم" },
+    description: { zh: "全球职场人士的社交名片与简历平台，涵盖招聘、行业动态、B2B 销售、职场知识分享等。", en: "The global business card and résumé platform for professionals, covering recruiting, industry news, B2B sales and career insights.", ar: "منصة السيرة الذاتية وبطاقة الأعمال للمهنيين حول العالم، تغطي التوظيف والأخبار المهنية ومبيعات B2B ومحتوى التطور الوظيفي." },
+    longDescription: { zh: "LinkedIn（领英）是全球最大的职业社交网络，成立于 2003 年，2016 年被微软以 262 亿美元收购。目前拥有超过 10 亿注册用户、覆盖 200 多个国家和地区。LinkedIn 是海外求职、B2B 拓客、雇主品牌建设、行业洞察分享的核心平台。对出海人士而言，一份完善的 LinkedIn 档案几乎等同于国际化的职业身份证。", en: "LinkedIn is the world's largest professional networking service, founded in 2003 and acquired by Microsoft in 2016 for $26.2 billion. It now has more than 1 billion registered users across 200+ countries and regions. LinkedIn is the primary platform for overseas job hunting, B2B lead generation, employer branding and industry insight sharing. For anyone going global, a polished LinkedIn profile is effectively an international professional identity.", ar: "LinkedIn هي أكبر شبكة تواصل مهني في العالم، تأسست عام 2003 واستحوذت عليها مايكروسوفت في 2016 مقابل 26.2 مليار دولار. تضم اليوم أكثر من مليار مستخدم مسجل في أكثر من 200 دولة ومنطقة. LinkedIn هي المنصة الأساسية للبحث عن العمل خارجياً وتطوير عملاء B2B وبناء العلامة التجارية لأصحاب العمل ومشاركة رؤى الصناعة. بالنسبة لمن يتجه للأسواق العالمية، فإن ملفاً محكماً على LinkedIn يعادل بطاقة هوية مهنية دولية." },
+    history: { zh: "LinkedIn 由 Reid Hoffman 等人于 2002 年底在客厅创立，2003 年 5 月正式上线。作为「Web 2.0 时代」最早的社交网络之一，LinkedIn 早于 Facebook。凭借专注职业身份的差异化定位，LinkedIn 避开了 Facebook 的正面竞争，稳步成长为全球最大的职场平台。2011 年 LinkedIn 上市。2016 年 6 月，微软以 262 亿美元的价格完成对 LinkedIn 的收购，是当时科技行业史上最大规模的收购之一。近年 LinkedIn 大幅加码内容生态与 AI 功能，成为微软 AI 战略的重要触点。", en: "LinkedIn was founded in Reid Hoffman's living room in late 2002 and officially launched in May 2003. As one of the earliest Web 2.0 social networks—predating Facebook—LinkedIn carved out a differentiated niche around professional identity, avoiding head-on competition with Facebook and steadily growing into the world's largest career platform. LinkedIn went public in 2011. In June 2016, Microsoft acquired LinkedIn for $26.2 billion, one of the largest tech acquisitions in history at the time. In recent years, LinkedIn has heavily invested in its content ecosystem and AI features, making it a key surface in Microsoft's AI strategy.", ar: "أُسس LinkedIn في غرفة معيشة ريد هوفمان أواخر 2002 وأطلق رسمياً في مايو 2003. باعتباره من أوائل شبكات Web 2.0 الاجتماعية—أسبق من Facebook—وجد LinkedIn لنفسه نيتشاً متميزاً حول الهوية المهنية، متجنباً المنافسة المباشرة مع Facebook، ونما ليصبح أكبر منصة مهنية عالمياً. طُرح LinkedIn للاكتتاب العام في 2011. وفي يونيو 2016، استحوذت مايكروسوفت على LinkedIn بـ 26.2 مليار دولار، وهي إحدى أكبر صفقات الاستحواذ في تاريخ التكنولوجيا حينذاك. مؤخراً، ضخّ LinkedIn استثمارات ضخمة في محتواه وميزات الذكاء الاصطناعي، ليصبح واجهة رئيسية لاستراتيجية Microsoft في AI." },
+    features: [
+      {
+        icon: "📄",
+        title: { zh: "职业档案", en: "Professional Profile", ar: "الملف المهني" },
+        desc: { zh: "打造在线简历与个人品牌，展示学历、工作经历和技能背书", en: "Build your online résumé and personal brand with education, experience and skill endorsements", ar: "أنشئ سيرة ذاتية إلكترونية وعلامة شخصية تعرض التعليم والخبرة والمهارات" },
+      },
+      {
+        icon: "🔎",
+        title: { zh: "职位搜索", en: "Job Search", ar: "البحث عن وظائف" },
+        desc: { zh: "海量海外远程与本地职位，一键提交简历，与招聘方直接沟通", en: "Massive listings of remote and local overseas jobs with 1-click apply and recruiter chat", ar: "قوائم وظائف عن بُعد ومحلية بأعداد ضخمة مع تقديم بنقرة واحدة ومحادثة المسؤولين" },
+      },
+      {
+        icon: "🤝",
+        title: { zh: "商务人脉", en: "Business Networking", ar: "الشبكة التجارية" },
+        desc: { zh: "根据行业、公司、职位精准建立连接，用于销售、招聘、合作", en: "Precisely build connections by industry, company or role for sales, hiring and partnerships", ar: "ابنِ اتصالات دقيقة حسب الصناعة والشركة والدور للمبيعات والتوظيف والشراكات" },
+      },
+      {
+        icon: "📰",
+        title: { zh: "内容动态", en: "Content Feed", ar: "خلاصة المحتوى" },
+        desc: { zh: "发布长文、视频、行业洞察，建立影响力，触达潜在客户", en: "Post articles, videos and industry takes to build influence and reach prospects", ar: "انشر مقالات وفيديوهات ورؤى قطاعية لبناء التأثير والوصول إلى العملاء المحتملين" },
+      },
+      {
+        icon: "📈",
+        title: { zh: "Sales Navigator", en: "Sales Navigator", ar: "Sales Navigator" },
+        desc: { zh: "B2B 销售必备工具，高级搜索、CRM 对接、批量触达潜在客户", en: "The essential B2B sales tool with advanced search, CRM integration and prospecting", ar: "أداة أساسية لمبيعات B2B مع بحث متقدم وتكامل CRM واستكشاف العملاء المحتملين" },
+      },
+      {
+        icon: "🎓",
+        title: { zh: "LinkedIn Learning", en: "LinkedIn Learning", ar: "LinkedIn Learning" },
+        desc: { zh: "在线课程平台，覆盖商业、技术、创意领域超过 2 万门课程", en: "Online course platform with 20,000+ courses across business, tech and creative fields", ar: "منصة دورات إلكترونية تحوي أكثر من 20 ألف دورة في الأعمال والتقنية والإبداع" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "注册账号", en: "Sign Up", ar: "إنشاء حساب" },
+        desc: { zh: "访问 linkedin.com 使用邮箱注册，国内可访问但速度不稳定，建议使用科学上网", en: "Sign up at linkedin.com with your email. Accessible in China but unstable — a VPN is recommended", ar: "سجّل في linkedin.com عبر بريدك الإلكتروني. يمكن الوصول في الصين لكن باتصال غير مستقر، ويُنصح بـ VPN" },
+      },
+      {
+        title: { zh: "完善档案", en: "Complete Profile", ar: "استكمال الملف" },
+        desc: { zh: "上传专业头像，填写工作经历、教育背景、技能标签，让档案完整度达 100%", en: "Upload a professional photo, fill in experience, education and skills to reach 100% profile completeness", ar: "ارفع صورة مهنية، واملأ الخبرة والتعليم والمهارات للوصول إلى 100% من اكتمال الملف" },
+      },
+      {
+        title: { zh: "建立人脉", en: "Build Network", ar: "بناء الشبكة" },
+        desc: { zh: "主动发送连接请求给同学、同事、目标客户或招聘官", en: "Proactively send connection requests to alumni, coworkers, target clients or recruiters", ar: "ابعث طلبات التواصل بشكل مبادر إلى الزملاء والخريجين والعملاء المستهدفين والمسؤولين" },
+      },
+      {
+        title: { zh: "定期发布内容", en: "Post Regularly", ar: "انشر بانتظام" },
+        desc: { zh: "每周发布 1-2 条行业洞察或个人思考，通过评论互动扩大影响", en: "Post 1-2 industry takes or reflections per week and engage in comments to grow reach", ar: "انشر 1-2 رؤى قطاعية أو تأملات أسبوعياً وتفاعل في التعليقات لتوسيع الانتشار" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "LinkedIn 国内还能用吗？", en: "Is LinkedIn still usable in China?", ar: "هل لا يزال LinkedIn مستخدماً في الصين؟" },
+        a: { zh: "2021 年 LinkedIn 关闭了中国本地版「领英职场」，但国际版 linkedin.com 目前仍可访问，只是连接极不稳定，建议配合科学上网使用。", en: "LinkedIn shut down its China-localized version 'InCareer' in 2021, but the international linkedin.com is still reachable — connections are unstable, so a VPN is recommended.", ar: "أوقف LinkedIn نسخته الصينية 'InCareer' عام 2021، لكن الموقع الدولي linkedin.com لا يزال متاحاً، مع عدم استقرار الاتصال، ويُنصح باستخدام VPN." },
+      },
+      {
+        q: { zh: "LinkedIn Premium 值得买吗？", en: "Is LinkedIn Premium worth it?", ar: "هل يستحق اشتراك LinkedIn Premium؟" },
+        a: { zh: "如果你在积极求职（$39.99/月，Career 版）或做海外 B2B 销售（$99.99/月，Sales Navigator），Premium 提供的「谁看了我」、无限搜索、InMail 值得付费。日常使用免费版足够。", en: "If you're actively job hunting (Career at $39.99/mo) or doing overseas B2B sales (Sales Navigator at $99.99/mo), Premium's 'Who viewed you', unlimited search and InMail are worth it. For casual use, the free tier suffices.", ar: "إذا كنت تبحث عن وظيفة بنشاط (Career بـ 39.99$ شهرياً) أو تعمل في مبيعات B2B الخارجية (Sales Navigator بـ 99.99$ شهرياً)، فإن ميزات Premium مثل 'من زار ملفك' والبحث اللامحدود وInMail تستحق. للاستخدام العادي تكفي الباقة المجانية." },
+      },
+    ],
+  },
+  {
+    slug: "figma",
+    category: "office",
+    logo: "🎨",
+    color: "#f24e1e",
+    officialUrl: "https://www.figma.com",
+    founded: "2012-06-01",
+    founder: "Dylan Field, Evan Wallace",
+    headquarter: "San Francisco, CA, USA",
+    name: { zh: "Figma", en: "Figma", ar: "Figma" },
+    tagline: { zh: "全球最流行的在线协同设计工具", en: "The World's Leading Collaborative Design Tool", ar: "أداة التصميم التعاوني الأكثر شعبية عالمياً" },
+    description: { zh: "基于浏览器的实时协同设计工具，是 UI/UX 设计、原型交互、设计系统构建的行业标准。", en: "A browser-based real-time collaborative design tool that is the industry standard for UI/UX design, prototyping and design systems.", ar: "أداة تصميم تعاونية عبر المتصفح في الوقت الفعلي، وهي المعيار الصناعي لتصميم UI/UX والنماذج الأولية وأنظمة التصميم." },
+    longDescription: { zh: "Figma 是一款完全基于浏览器运行的矢量设计与原型工具，由 Dylan Field 和 Evan Wallace 于 2012 年创立、2016 年正式发布。凭借「多人实时协同」的革命性体验，Figma 迅速取代 Sketch、Adobe XD，成为全球 UI/UX 设计领域事实上的标准工具。2022 年 Adobe 曾宣布以 200 亿美元收购 Figma，但因监管审查在 2023 年终止。目前 Figma 服务全球超 400 万活跃用户，客户涵盖 Google、Microsoft、Uber、Airbnb 等几乎所有科技巨头。", en: "Figma is a browser-native vector design and prototyping tool founded in 2012 by Dylan Field and Evan Wallace and publicly launched in 2016. Its revolutionary multiplayer real-time collaboration quickly displaced Sketch and Adobe XD, making Figma the de facto standard tool for UI/UX design globally. Adobe announced a $20 billion acquisition in 2022, which was terminated in 2023 due to regulatory scrutiny. Figma now serves over 4 million active users, with customers including Google, Microsoft, Uber, Airbnb and nearly every major tech company.", ar: "Figma هي أداة تصميم متجهية ونماذج أولية تعمل بالكامل داخل المتصفح، أسسها ديلان فيلد وإيفان والاس عام 2012 وأُطلقت رسمياً عام 2016. بفضل تجربتها الثورية في التعاون الجماعي الفوري، أزاحت Figma بسرعة أدوات Sketch وAdobe XD، لتصبح المعيار الفعلي لتصميم UI/UX عالمياً. أعلنت Adobe عام 2022 عن استحواذها على Figma بـ 20 مليار دولار، لكن أُلغيت الصفقة عام 2023 لأسباب تنظيمية. تخدم Figma الآن أكثر من 4 ملايين مستخدم نشط، من بينهم Google وMicrosoft وUber وAirbnb وغيرها من كبرى شركات التقنية." },
+    history: { zh: "Figma 由布朗大学同学 Dylan Field 和 Evan Wallace 于 2012 年联合创立。Dylan 获得 Peter Thiel 奖学金支持退学创业，Evan 是 WebGL 图形专家，两人赌注在「浏览器能承载专业设计工具」这一当时被认为不可能的方向上。经过 4 年打磨，Figma 于 2016 年 9 月正式发布，其多人实时协同能力让整个设计行业耳目一新。2022 年 9 月，Adobe 宣布以约 200 亿美元现金和股票收购 Figma，随即引发全球反垄断关注，2023 年 12 月双方宣布终止交易并支付 10 亿美元分手费。Figma 保持独立运营，并在 2024 年推出了 Dev Mode、AI 辅助设计等新方向。", en: "Figma was co-founded in 2012 by Brown University classmates Dylan Field and Evan Wallace. Dylan dropped out with support from the Peter Thiel Fellowship, while Evan was a WebGL graphics expert; together they bet on the then-heretical idea that a browser could host a professional design tool. After four years of development, Figma launched in September 2016, and its multiplayer collaboration transformed the design industry. In September 2022, Adobe announced a $20 billion cash-and-stock acquisition, which triggered global antitrust scrutiny and was terminated in December 2023 with a $1 billion breakup fee. Figma remained independent, launching Dev Mode and AI-assisted design in 2024.", ar: "أسّس Figma عام 2012 زميلا الدراسة في جامعة براون، ديلان فيلد وإيفان والاس. ترك ديلان الجامعة بدعم من زمالة بيتر ثيل، فيما كان إيفان خبيراً في رسوميات WebGL، وراهنا على فكرة أن المتصفح يمكن أن يحتضن أداة تصميم احترافية—وهي فكرة اعتُبرت مستحيلة آنذاك. بعد أربع سنوات من التطوير، أُطلقت Figma في سبتمبر 2016، وأحدث تعاونها الفوري تحولاً في صناعة التصميم. في سبتمبر 2022، أعلنت Adobe عن استحواذها بـ 20 مليار دولار نقداً وأسهماً، مما أثار تدقيقاً عالمياً في مكافحة الاحتكار، وأُلغيت الصفقة في ديسمبر 2023 مع دفع رسوم إلغاء بمليار دولار. ظلت Figma مستقلة وأطلقت في 2024 وضع Dev Mode والتصميم بمساعدة الذكاء الاصطناعي." },
+    features: [
+      {
+        icon: "👥",
+        title: { zh: "实时协同", en: "Multiplayer Editing", ar: "التحرير الجماعي الفوري" },
+        desc: { zh: "多人同时编辑同一文件，光标实时可见，堪比 Google Docs 的设计版", en: "Multiple designers edit the same file simultaneously with live cursors, like Google Docs for design", ar: "يعمل عدة مصممين على نفس الملف بمؤشرات حية، أشبه بـ Google Docs للتصميم" },
+      },
+      {
+        icon: "🧩",
+        title: { zh: "组件与设计系统", en: "Components & Design Systems", ar: "المكونات وأنظمة التصميم" },
+        desc: { zh: "强大的组件、变体、Auto Layout，是构建企业级设计系统的首选工具", en: "Powerful components, variants and Auto Layout make it the top choice for enterprise design systems", ar: "مكونات ومتغيرات وAuto Layout قوية تجعلها الخيار الأول لأنظمة التصميم المؤسسية" },
+      },
+      {
+        icon: "🎯",
+        title: { zh: "原型交互", en: "Prototyping", ar: "النماذج التفاعلية" },
+        desc: { zh: "无需代码，通过连线搭建可点击、可播放动画的高保真交互原型", en: "Build clickable, animated high-fidelity prototypes by wiring frames — no code required", ar: "أنشئ نماذج تفاعلية عالية الدقة بالنقر ودعم الرسوم المتحركة عبر الربط دون الحاجة للكود" },
+      },
+      {
+        icon: "💻",
+        title: { zh: "Dev Mode", en: "Dev Mode", ar: "وضع المطور Dev Mode" },
+        desc: { zh: "开发者视图，可查看设计尺寸、颜色、CSS 代码、资源导出", en: "Developer view showing sizes, colors, CSS snippets and asset exports for handoff", ar: "عرض مخصص للمطورين لرؤية الأحجام والألوان وقصاصات CSS وتصدير الموارد" },
+      },
+      {
+        icon: "📋",
+        title: { zh: "FigJam 白板", en: "FigJam Whiteboard", ar: "لوحة FigJam" },
+        desc: { zh: "免费在线白板工具，适合头脑风暴、用户旅程、流程图协作", en: "Free online whiteboard for brainstorming, user journeys and flowchart collaboration", ar: "لوحة إلكترونية مجانية للعصف الذهني ورحلات المستخدم ومخططات التدفق التعاونية" },
+      },
+      {
+        icon: "🔌",
+        title: { zh: "插件生态", en: "Plugin Ecosystem", ar: "نظام الإضافات" },
+        desc: { zh: "数千款插件覆盖图标、翻译、AI 生成、代码导出等各类场景", en: "Thousands of plugins covering icons, translation, AI generation, code export and more", ar: "آلاف الإضافات تغطي الأيقونات والترجمة والتوليد بالذكاء الاصطناعي وتصدير الأكواد" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "注册账号", en: "Sign Up", ar: "إنشاء حساب" },
+        desc: { zh: "访问 figma.com 使用邮箱或 Google 账号注册，国内可访问但速度不稳定", en: "Sign up at figma.com with email or Google account. Accessible in China but with variable speed", ar: "سجّل في figma.com عبر البريد أو حساب Google. متاح في الصين لكن بسرعة متغيرة" },
+      },
+      {
+        title: { zh: "创建团队", en: "Create Team", ar: "إنشاء فريق" },
+        desc: { zh: "免费版可创建 3 个设计文件和 1 个团队项目，Professional 版 $15/月/编辑者", en: "Free tier allows 3 design files and 1 team project; Professional is $15/mo per editor", ar: "الباقة المجانية تسمح بـ 3 ملفات تصميم ومشروع فريق واحد؛ Professional بـ 15$ شهرياً لكل محرر" },
+      },
+      {
+        title: { zh: "使用模板", en: "Explore Templates", ar: "استكشاف القوالب" },
+        desc: { zh: "浏览 Figma Community 免费获取数千款 UI Kit、图标库、设计系统模板", en: "Browse Figma Community to get thousands of free UI kits, icon libraries and design system templates", ar: "تصفح Figma Community للحصول على آلاف مجموعات UI وأيقونات وأنظمة تصميم مجانية" },
+      },
+      {
+        title: { zh: "邀请协作", en: "Invite Collaborators", ar: "دعوة المتعاونين" },
+        desc: { zh: "点击右上角「Share」邀请团队成员或客户，设置查看或编辑权限", en: "Click 'Share' in the top-right to invite teammates or clients with view or edit permissions", ar: "انقر 'Share' أعلى اليمين لدعوة أعضاء الفريق أو العملاء بصلاحيات عرض أو تحرير" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "Figma 国内速度慢怎么办？", en: "Figma is slow in China. What can I do?", ar: "Figma بطيء في الصين، ماذا أفعل؟" },
+        a: { zh: "Figma 服务器在海外，国内直连速度不稳定。推荐使用瞬云等高速机场提升访问速度，或使用桌面客户端配合科学上网获得更流畅体验。", en: "Figma servers are hosted overseas and direct access from China is unstable. A high-speed VPN like ShunYun improves access, and the desktop app with a VPN offers the smoothest experience.", ar: "خوادم Figma خارج الصين والوصول المباشر غير مستقر. يُنصح باستخدام VPN عالي السرعة مثل ShunYun، مع تطبيق سطح المكتب لتجربة أكثر سلاسة." },
+      },
+      {
+        q: { zh: "Figma 免费版够用吗？", en: "Is the Figma free plan enough?", ar: "هل الباقة المجانية كافية؟" },
+        a: { zh: "个人独立设计师、学生做作品集完全够用（无限个人文件）。团队协作或多项目管理建议升级 Professional。教育邮箱可申请免费教育版。", en: "For solo designers and students building portfolios, the free plan is plenty (unlimited personal files). For team collaboration and multiple projects, upgrade to Professional. Educators and students can apply for a free Education plan.", ar: "للمصممين المستقلين والطلاب لبناء المعارض، الباقة المجانية كافية (ملفات شخصية غير محدودة). للتعاون الجماعي وإدارة مشاريع متعددة يُنصح بالترقية إلى Professional. يمكن للطلاب والمعلمين التقدم للحصول على باقة تعليم مجانية." },
+      },
+    ],
+  },
+  {
+    slug: "shopify",
+    category: "ecommerce",
+    logo: "🛒",
+    color: "#96bf47",
+    officialUrl: "https://www.shopify.com",
+    founded: "2006-06-01",
+    founder: "Tobias Lütke, Daniel Weinand, Scott Lake",
+    headquarter: "Ottawa, Ontario, Canada",
+    name: { zh: "Shopify", en: "Shopify", ar: "Shopify" },
+    tagline: { zh: "全球领先的独立站电商建站平台", en: "The World's Leading DTC E-Commerce Platform", ar: "المنصة الرائدة عالمياً لإنشاء متاجر التجارة الإلكترونية المستقلة" },
+    description: { zh: "一站式跨境电商建站与运营平台，支持自建独立站、多渠道销售、支付、物流、营销全流程。", en: "An all-in-one platform to launch and run cross-border DTC stores, covering site building, multi-channel selling, payment, logistics and marketing.", ar: "منصة متكاملة لإطلاق وتشغيل متاجر DTC عبر الحدود، تغطي بناء الموقع والبيع متعدد القنوات والدفع والخدمات اللوجستية والتسويق." },
+    longDescription: { zh: "Shopify 是全球最大的独立站（DTC）电商 SaaS 平台，成立于 2006 年，总部位于加拿大渥太华。截至 2024 年，全球超过 400 万商家使用 Shopify 建站，商品交易总额（GMV）年超 2000 亿美元，市场份额稳居全球第一。Shopify 提供从建站模板、支付网关（Shop Pay）、物流履约（Shopify Fulfillment）到全渠道销售（POS、TikTok、Instagram）的一体化解决方案，是中国跨境电商卖家出海独立站的首选工具。", en: "Shopify is the world's largest DTC e-commerce SaaS platform, founded in 2006 and headquartered in Ottawa, Canada. As of 2024, over 4 million merchants worldwide run stores on Shopify, generating annual GMV exceeding $200 billion — the #1 market share globally. Shopify offers an end-to-end solution spanning storefront templates, payments (Shop Pay), fulfillment (Shopify Fulfillment) and omnichannel sales (POS, TikTok, Instagram), making it the go-to platform for Chinese cross-border sellers building overseas DTC brands.", ar: "Shopify هي أكبر منصة SaaS للتجارة الإلكترونية المباشرة (DTC) في العالم، تأسست عام 2006 ومقرها أوتاوا في كندا. حتى عام 2024، يشغّل أكثر من 4 ملايين تاجر متاجرهم على Shopify، بإجمالي مبيعات سنوي يتجاوز 200 مليار دولار، وهي الأولى عالمياً في حصتها السوقية. توفر Shopify حلاً متكاملاً من قوالب المتاجر إلى المدفوعات (Shop Pay) والخدمات اللوجستية (Shopify Fulfillment) والبيع متعدد القنوات (POS وTikTok وInstagram)، مما يجعلها الخيار الأمثل لبائعي الصين لبناء علامات DTC عالمية." },
+    history: { zh: "Shopify 的故事始于 2004 年，创始人 Tobias Lütke 想在网上销售滑雪板，但发现当时没有合适的电商工具，于是自己动手开发。2006 年，他将其独立出来创立 Shopify。凭借简洁的建站体验和不断扩展的应用生态，Shopify 在电商平台大战中逐渐胜出。2015 年 Shopify 于纽约与多伦多两地上市。2020 年新冠疫情推动电商大爆发，Shopify 股价一年上涨近 4 倍，市值一度突破 2000 亿美元。2023 年，Shopify 剥离物流业务、聚焦核心 SaaS，业绩持续强劲。", en: "Shopify's story began in 2004 when founder Tobias Lütke wanted to sell snowboards online but found no suitable e-commerce tools — so he built his own. In 2006, he spun it out as Shopify. Thanks to a clean building experience and an ever-expanding app ecosystem, Shopify emerged victorious in the e-commerce platform wars. Shopify went public on both NYSE and TSX in 2015. The 2020 pandemic supercharged e-commerce and Shopify's stock nearly quadrupled in a year, briefly pushing its market cap above $200 billion. In 2023, Shopify divested its logistics operations to focus on core SaaS, and results have remained strong.", ar: "بدأت قصة Shopify عام 2004 عندما أراد المؤسس توبياس لوتكه بيع ألواح التزلج عبر الإنترنت، لكنه لم يجد أدوات تجارة إلكترونية مناسبة، فقرر تطوير أداته الخاصة. في 2006، أفرد المنتج تحت اسم Shopify. بفضل تجربة بناء نظيفة ونظام تطبيقات متسع باستمرار، فازت Shopify في حرب منصات التجارة. طُرحت أسهمها في بورصتي نيويورك وتورنتو عام 2015. وأشعلت جائحة كوفيد-19 عام 2020 التجارة الإلكترونية، فتضاعفت أسهم Shopify نحو 4 مرات خلال عام، وتجاوزت قيمتها السوقية 200 مليار دولار. في 2023، فصلت Shopify عملياتها اللوجستية للتركيز على SaaS الأساسي، وواصلت نتائجها القوية." },
+    features: [
+      {
+        icon: "🏪",
+        title: { zh: "一站式建站", en: "1-Click Storefronts", ar: "متاجر بنقرة واحدة" },
+        desc: { zh: "海量精美模板，无需代码即可搭建品牌独立站", en: "Hundreds of stunning themes to launch a branded storefront with no code", ar: "مئات القوالب الأنيقة لإطلاق واجهة متجر مميزة بلا أكواد" },
+      },
+      {
+        icon: "💳",
+        title: { zh: "Shop Pay 支付", en: "Shop Pay Checkout", ar: "الدفع عبر Shop Pay" },
+        desc: { zh: "转化率业内最高的加速结账方案，支持全球主流支付方式", en: "The industry's highest-converting accelerated checkout with all major global payment methods", ar: "خدمة الدفع الأسرع تحويلاً في الصناعة مع دعم جميع طرق الدفع العالمية الرئيسية" },
+      },
+      {
+        icon: "🌐",
+        title: { zh: "全渠道销售", en: "Omnichannel Selling", ar: "البيع متعدد القنوات" },
+        desc: { zh: "同步销售到 TikTok Shop、Instagram、Amazon、Google Shopping 等平台", en: "Sell simultaneously on TikTok Shop, Instagram, Amazon, Google Shopping and more", ar: "بع في الوقت نفسه عبر TikTok Shop وInstagram وأمازون وGoogle Shopping وغيرها" },
+      },
+      {
+        icon: "📦",
+        title: { zh: "订单与物流", en: "Orders & Fulfillment", ar: "الطلبات والشحن" },
+        desc: { zh: "对接全球主流物流商，一键打单发货，支持第三方海外仓", en: "Connect to global carriers with 1-click labels and third-party overseas warehouses", ar: "اتصل بشركات الشحن العالمية مع طباعة ملصقات بنقرة واحدة ودعم المستودعات الخارجية" },
+      },
+      {
+        icon: "🎯",
+        title: { zh: "营销与 SEO", en: "Marketing & SEO", ar: "التسويق وSEO" },
+        desc: { zh: "内置邮件营销、折扣码、废弃购物车挽回、SEO 优化", en: "Built-in email marketing, discount codes, abandoned cart recovery and SEO", ar: "تسويق بريدي مدمج ورموز خصم واسترداد العربات المتروكة وتحسين محركات البحث" },
+      },
+      {
+        icon: "🧩",
+        title: { zh: "App Store 应用", en: "Shopify App Store", ar: "متجر تطبيقات Shopify" },
+        desc: { zh: "超过 8000 款应用扩展店铺功能，从财务到 AI 客服无所不包", en: "8,000+ apps extending store capabilities from finance to AI customer service", ar: "أكثر من 8000 تطبيق يوسع قدرات المتجر من المالية إلى خدمة العملاء بالذكاء الاصطناعي" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "注册免费试用", en: "Start Free Trial", ar: "بدء التجربة المجانية" },
+        desc: { zh: "访问 shopify.com 注册 3 天免费试用，之后 $1/月体验 3 个月", en: "Sign up at shopify.com for a 3-day free trial, then $1/month for 3 months", ar: "سجّل في shopify.com للحصول على تجربة مجانية 3 أيام ثم 1$ شهرياً لـ 3 أشهر" },
+      },
+      {
+        title: { zh: "选择套餐", en: "Choose Plan", ar: "اختيار الباقة" },
+        desc: { zh: "Basic $29/月，Shopify $79/月，Advanced $299/月，跨境卖家推荐 Shopify 中级套餐", en: "Basic $29/mo, Shopify $79/mo, Advanced $299/mo. The mid-tier Shopify plan is ideal for cross-border sellers", ar: "Basic بـ 29$ شهرياً، Shopify بـ 79$ شهرياً، Advanced بـ 299$ شهرياً. الباقة الوسطى Shopify هي الأنسب للبائعين عبر الحدود" },
+      },
+      {
+        title: { zh: "选主题上架商品", en: "Pick Theme & Add Products", ar: "اختر القالب وأضف المنتجات" },
+        desc: { zh: "从 Theme Store 选择模板，上传商品图文、SKU 与库存", en: "Pick a template from the Theme Store, upload product photos, SKUs and inventory", ar: "اختر قالباً من متجر القوالب، وارفع صور المنتجات وأرقام SKU والمخزون" },
+      },
+      {
+        title: { zh: "配置支付与物流", en: "Set Up Payments & Shipping", ar: "إعداد الدفع والشحن" },
+        desc: { zh: "开通 Shopify Payments 或第三方（Stripe、PayPal），设置运费模板", en: "Enable Shopify Payments or third-party (Stripe, PayPal) and set shipping rate templates", ar: "فعّل Shopify Payments أو مزوداً خارجياً مثل Stripe وPayPal، واضبط قوالب رسوم الشحن" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "中国大陆卖家能用 Shopify 吗？", en: "Can sellers in mainland China use Shopify?", ar: "هل يمكن للبائعين في الصين استخدام Shopify؟" },
+        a: { zh: "可以。Shopify 支持中国大陆卖家注册，但收款需要通过 Shopify Payments（需美国、香港等主体）、Stripe（香港、新加坡主体）或 PayPal（企业账户）。国内访问后台建议使用科学上网。", en: "Yes. Shopify accepts mainland China sellers, but payments require Shopify Payments (via US/HK entity), Stripe (HK/SG entity) or PayPal (business account). A VPN is recommended for admin access from China.", ar: "نعم. تقبل Shopify البائعين من الصين القارية، لكن تحصيل المدفوعات يتطلب Shopify Payments (عبر كيان أمريكي أو هونغ كونغ) أو Stripe (هونغ كونغ أو سنغافورة) أو PayPal (حساب أعمال). ويُنصح باستخدام VPN للوصول من الصين." },
+      },
+      {
+        q: { zh: "Shopify 和 Amazon 有什么区别？", en: "What's the difference between Shopify and Amazon?", ar: "ما الفرق بين Shopify وAmazon؟" },
+        a: { zh: "Amazon 是平台电商，卖家在其流量池内竞争、需分佣；Shopify 是独立站工具，卖家拥有自己的品牌与用户数据，但需自行获取流量。想做长期品牌选 Shopify，快速起量卖货选 Amazon，二者结合是主流打法。", en: "Amazon is a marketplace where sellers compete inside its traffic pool and pay commissions; Shopify is a DTC toolkit where sellers own their brand and customer data but must drive traffic themselves. Choose Shopify for long-term branding, Amazon for volume — combining both is the mainstream approach.", ar: "أمازون سوق تنافسي داخل قاعدة زواره مع دفع عمولات؛ أما Shopify فأداة DTC يمتلك فيها البائع علامته وبيانات عملائه، لكن عليه جلب الزوار بنفسه. اختر Shopify لبناء علامة طويلة الأمد، وأمازون لتحقيق حجم بيع سريع، والدمج بينهما هو النهج السائد." },
+      },
+    ],
+  },
+  {
+    slug: "paypal",
+    category: "ecommerce",
+    logo: "💰",
+    color: "#003087",
+    officialUrl: "https://www.paypal.com",
+    founded: "1998-12-01",
+    founder: "Max Levchin, Peter Thiel, Luke Nosek, Ken Howery",
+    headquarter: "San Jose, CA, USA",
+    name: { zh: "PayPal", en: "PayPal", ar: "PayPal" },
+    tagline: { zh: "全球最大在线跨境支付平台", en: "The World's Largest Online Cross-Border Payment Platform", ar: "أكبر منصة للمدفوعات الإلكترونية عبر الحدود في العالم" },
+    description: { zh: "覆盖 200 多个国家和地区的在线支付服务，是跨境电商收付款、自由职业者收美元的行业标准。", en: "Online payment service available in 200+ countries and regions, the industry standard for cross-border e-commerce and freelancers receiving USD.", ar: "خدمة دفع إلكتروني متوفرة في أكثر من 200 دولة ومنطقة، وهي المعيار الصناعي للتجارة الإلكترونية عبر الحدود والمستقلين الذين يستلمون الدولار." },
+    longDescription: { zh: "PayPal 是全球最早、覆盖最广的在线支付服务商，1998 年由 Peter Thiel、Max Levchin、Elon Musk 等「PayPal 黑帮」共同缔造。截至 2024 年拥有超 4.3 亿活跃账户，业务覆盖 200 多个国家和地区，支持 25 种货币。PayPal 是海外买家最信任的支付方式之一，广泛应用于跨境电商、独立站收款、SaaS 订阅、自由职业者接单、Fiverr/Upwork 提现等场景，是中国出海从业者不可或缺的资金通道。", en: "PayPal is the earliest and most globally established online payment provider, founded in 1998 by the 'PayPal Mafia' including Peter Thiel, Max Levchin and Elon Musk. As of 2024 it has over 430 million active accounts, operates in 200+ countries and regions and supports 25 currencies. PayPal is one of the most trusted payment methods for overseas buyers, widely used in cross-border e-commerce, DTC stores, SaaS subscriptions, freelance work and Fiverr/Upwork withdrawals — an essential money conduit for Chinese overseas professionals.", ar: "PayPal هو أول وأوسع مزود مدفوعات إلكترونية في العالم، تأسس عام 1998 من قبل 'عصابة PayPal' بما فيهم بيتر ثيل وماكس ليفشين وإيلون ماسك. حتى 2024، يمتلك أكثر من 430 مليون حساب نشط، ويعمل في أكثر من 200 دولة ومنطقة ويدعم 25 عملة. PayPal من أكثر طرق الدفع موثوقية بالنسبة للمشترين الأجانب، ويُستخدم على نطاق واسع في التجارة الإلكترونية عبر الحدود ومتاجر DTC واشتراكات SaaS والعمل الحر وسحب أرباح Fiverr وUpwork، وهو قناة تمويلية أساسية للعاملين الصينيين في الأسواق الخارجية." },
+    history: { zh: "PayPal 的前身 Confinity 由 Max Levchin 与 Peter Thiel 于 1998 年创立，专注于掌上电脑加密支付。2000 年 Confinity 与 Elon Musk 创办的 X.com 合并，2001 年正式更名为 PayPal。2002 年 eBay 以 15 亿美元收购 PayPal 后成为其主导支付方式。2015 年 PayPal 从 eBay 拆分独立上市。PayPal 早期团队被誉为「PayPal 黑帮」，成员日后创立了 SpaceX、Tesla、LinkedIn、YouTube、Palantir、Yelp 等公司，是硅谷最具影响力的创业圈子。PayPal 收购的 Braintree 和 Venmo 进一步扩大了其在移动支付领域的版图。", en: "PayPal's precursor Confinity was founded by Max Levchin and Peter Thiel in 1998, focused on PalmPilot cryptography payments. In 2000, Confinity merged with Elon Musk's X.com and was formally renamed PayPal in 2001. In 2002, eBay acquired PayPal for $1.5 billion, making it eBay's dominant payment method. PayPal spun out from eBay and IPO'd again in 2015. The founding team, known as the 'PayPal Mafia', later founded SpaceX, Tesla, LinkedIn, YouTube, Palantir, Yelp and more — the most influential founder circle in Silicon Valley. Acquisitions of Braintree and Venmo further expanded PayPal's mobile payments footprint.", ar: "بدأت PayPal تحت اسم Confinity عام 1998 من قبل ماكس ليفشين وبيتر ثيل، وركزت على مدفوعات مشفرة لأجهزة PalmPilot. في 2000، اندمجت Confinity مع شركة X.com التي أسسها إيلون ماسك، ثم أُعيدت التسمية رسمياً إلى PayPal عام 2001. في 2002، استحوذت eBay على PayPal بـ 1.5 مليار دولار وأصبحت طريقة الدفع المهيمنة لديها. انفصلت PayPal عن eBay وطُرحت للاكتتاب مجدداً عام 2015. أطلق على فريقها المؤسس اسم 'عصابة PayPal'، وأسس أعضاؤه لاحقاً SpaceX وTesla وLinkedIn وYouTube وPalantir وYelp، ما جعلها أكثر دائرة مؤسسين تأثيراً في وادي السيليكون. كما أن استحواذها على Braintree وVenmo وسّع نطاقها في المدفوعات عبر الجوال." },
+    features: [
+      {
+        icon: "🌍",
+        title: { zh: "全球通用", en: "Global Coverage", ar: "التغطية العالمية" },
+        desc: { zh: "200+ 国家可用，支持 25 种货币收付款，跨境交易的通用标准", en: "Available in 200+ countries with 25 currencies — the universal standard for cross-border transactions", ar: "متوفر في أكثر من 200 دولة ويدعم 25 عملة، وهو المعيار الشامل للمعاملات عبر الحدود" },
+      },
+      {
+        icon: "🛡️",
+        title: { zh: "买家保障", en: "Buyer Protection", ar: "حماية المشتري" },
+        desc: { zh: "180 天买家保护计划，未收到货或货不对板可申请退款", en: "180-day Buyer Protection covering items not received or significantly different than described", ar: "حماية المشتري 180 يوماً تشمل عدم استلام السلعة أو اختلافها الجوهري عن الوصف" },
+      },
+      {
+        icon: "🔐",
+        title: { zh: "支付安全", en: "Payment Security", ar: "أمان الدفع" },
+        desc: { zh: "SSL 加密与欺诈监测，卡号不暴露给商家", en: "SSL encryption and fraud detection — card numbers are never exposed to merchants", ar: "تشفير SSL ومراقبة الاحتيال دون كشف أرقام البطاقات للتجار" },
+      },
+      {
+        icon: "💸",
+        title: { zh: "PayPal Balance", en: "PayPal Balance", ar: "رصيد PayPal" },
+        desc: { zh: "美元余额可用于消费、提现、转账、投资加密货币等", en: "USD balance can be used for spending, withdrawals, transfers and crypto investing", ar: "رصيد الدولار يمكن استخدامه للإنفاق والسحب والتحويلات والاستثمار في العملات المشفرة" },
+      },
+      {
+        icon: "🧾",
+        title: { zh: "商户收款", en: "Merchant Invoicing", ar: "فواتير التجار" },
+        desc: { zh: "生成专业发票、订阅账单、按钮式支付链接", en: "Generate professional invoices, subscription bills and pay-button links", ar: "إنشاء فواتير احترافية وفواتير اشتراك وروابط دفع بأزرار جاهزة" },
+      },
+      {
+        icon: "🏦",
+        title: { zh: "提现至银行", en: "Bank Withdrawals", ar: "السحب إلى البنك" },
+        desc: { zh: "支持提现到国内借记卡或美元银行账户，通常 1-3 个工作日到账", en: "Withdraw to a domestic debit card or USD bank account, typically 1-3 business days", ar: "السحب إلى بطاقة خصم محلية أو حساب بنكي بالدولار، عادةً خلال 1-3 أيام عمل" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "注册账号", en: "Sign Up", ar: "إنشاء حساب" },
+        desc: { zh: "访问 paypal.com 选择个人版或企业版注册，中国大陆卖家推荐企业版", en: "Register at paypal.com choosing Personal or Business — Business is recommended for China sellers", ar: "سجّل في paypal.com واختر شخصياً أو أعمالاً — يُنصح ببائعي الصين باستخدام حساب الأعمال" },
+      },
+      {
+        title: { zh: "绑定银行卡", en: "Link Bank Card", ar: "ربط البطاقة البنكية" },
+        desc: { zh: "绑定中国大陆银行的双币信用卡或借记卡，完成实名认证", en: "Link a dual-currency credit card or debit card from a Chinese bank and complete KYC", ar: "اربط بطاقة ائتمان أو خصم بعملتين من بنك صيني، وأكمل التحقق من الهوية (KYC)" },
+      },
+      {
+        title: { zh: "收款设置", en: "Configure Receiving", ar: "إعداد الاستلام" },
+        desc: { zh: "在电商后台或独立站开启 PayPal 收款方式，客户可用余额、信用卡付款", en: "Enable PayPal as a payment method in your store — customers can pay by balance or card", ar: "فعّل PayPal كطريقة دفع في متجرك — يمكن للعملاء الدفع بالرصيد أو البطاقة" },
+      },
+      {
+        title: { zh: "提现到境内", en: "Withdraw to China", ar: "السحب إلى الصين" },
+        desc: { zh: "余额提现至绑定的中国银行卡，费率约 1.2%，或使用连连、Payoneer 中转美元", en: "Withdraw to a linked China bank card at ~1.2% fee, or route USD via LianLian or Payoneer", ar: "اسحب الرصيد إلى بطاقة بنكية صينية بعمولة ~1.2%، أو حوّل الدولار عبر LianLian أو Payoneer" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "PayPal 收款手续费是多少？", en: "What are PayPal's receiving fees?", ar: "ما رسوم استلام الأموال على PayPal؟" },
+        a: { zh: "跨境商业交易费率为 4.4% + 固定费用（依币种不同），货币兑换额外收取约 3-4% 汇率差。跨境电商卖家实际综合成本约 5-7%。", en: "Cross-border commercial transactions are 4.4% plus a fixed fee (varies by currency), with an additional 3-4% currency conversion spread. Effective cross-border cost is typically 5-7%.", ar: "المعاملات التجارية عبر الحدود بنسبة 4.4% مضافاً إليها رسم ثابت (يختلف حسب العملة)، مع فارق تحويل عملة إضافي 3-4%. التكلفة الفعلية للتجارة عبر الحدود عادةً 5-7%." },
+      },
+      {
+        q: { zh: "PayPal 账户被冻结怎么办？", en: "What if my PayPal account is frozen?", ar: "ماذا لو تم تجميد حسابي على PayPal؟" },
+        a: { zh: "PayPal 对跨境卖家风控较严，常见冻结原因包括：新账户交易量突然增大、发货信息与账户地址不符、频繁登录 IP 变化。建议：完善实名认证、稳定发货物流单号、避免频繁切换 IP、遇到问题第一时间联系客服申诉。", en: "PayPal aggressively risk-monitors cross-border sellers. Common freeze reasons include: sudden volume spikes on new accounts, mismatched shipping vs. account address, and frequently changing login IPs. Best practices: complete KYC, provide consistent tracking numbers, avoid IP hopping, and appeal to support immediately when issues arise.", ar: "يفرض PayPal رقابة صارمة على البائعين عبر الحدود. أسباب التجميد الشائعة: قفزات مفاجئة في حجم حسابات جديدة، عدم تطابق عنوان الشحن مع عنوان الحساب، وتغييرات متكررة لعنوان IP. أفضل الممارسات: أكمل التحقق KYC، وقدم أرقام تتبع ثابتة، وتجنب تغيير IP، وتواصل مع الدعم فور حدوث مشكلة." },
+      },
+    ],
+  },
+  {
+    slug: "coursera",
+    category: "learning",
+    logo: "🎓",
+    color: "#0056d2",
+    officialUrl: "https://www.coursera.org",
+    founded: "2012-04-18",
+    founder: "Andrew Ng, Daphne Koller",
+    headquarter: "Mountain View, CA, USA",
+    name: { zh: "Coursera", en: "Coursera", ar: "Coursera" },
+    tagline: { zh: "全球顶尖大学在线课程平台", en: "Online Courses from the World's Top Universities", ar: "دورات إلكترونية من أفضل الجامعات في العالم" },
+    description: { zh: "由斯坦福教授吴恩达等人创立的 MOOC 平台，与斯坦福、耶鲁、Google、IBM 等 275 家机构合作提供正规学位、证书和短课程。", en: "MOOC platform founded by Stanford professor Andrew Ng and others, offering accredited degrees, professional certificates and short courses from 275+ partners including Stanford, Yale, Google and IBM.", ar: "منصة MOOC أسسها البروفيسور أندرو نغ من ستانفورد وآخرون، تقدم شهادات ودرجات جامعية معتمدة ودورات قصيرة بالتعاون مع أكثر من 275 شريكاً من ضمنهم ستانفورد وييل وGoogle وIBM." },
+    longDescription: { zh: "Coursera 是全球最具影响力的在线教育（MOOC）平台之一，2012 年由斯坦福大学计算机系两位教授吴恩达（Andrew Ng）与 Daphne Koller 共同创立。截至 2024 年注册学习者超过 1.6 亿人，与全球 275 家顶级大学和企业（包括斯坦福、耶鲁、密歇根、Google、IBM、Meta、DeepLearning.AI）合作，提供从免费公开课到硕士学位的完整学习路径。旗下的 Google 数据分析、IBM 数据科学、Meta 前端开发等专业证书是海外求职简历上极具含金量的凭证，也是想转行 AI/数据/软件工程从业者的首选平台。", en: "Coursera is one of the world's most influential MOOC platforms, founded in 2012 by Stanford computer science professors Andrew Ng and Daphne Koller. As of 2024, it has over 160 million registered learners, partnering with 275+ top universities and companies (Stanford, Yale, Michigan, Google, IBM, Meta, DeepLearning.AI) to offer everything from free open courses to full master's degrees. Its Google Data Analytics, IBM Data Science and Meta Front-End Developer certificates are highly regarded credentials on overseas job resumes and a first-choice platform for those transitioning into AI, data or software engineering.", ar: "Coursera هي إحدى أكثر منصات التعليم المفتوح (MOOC) تأثيراً في العالم، أسسها عام 2012 أستاذا علوم الحاسوب في ستانفورد أندرو نغ ودافني كولر. حتى 2024، لديها أكثر من 160 مليون متعلم مسجل، وتتشارك مع 275+ من كبريات الجامعات والشركات (ستانفورد، ييل، ميشيغان، Google، IBM، Meta، DeepLearning.AI) لتقديم كل شيء من الدورات المجانية المفتوحة حتى درجات الماجستير الكاملة. شهاداتها المهنية مثل Google Data Analytics وIBM Data Science وMeta Front-End Developer شهادات مرموقة في السير الذاتية الدولية، وهي المنصة الأولى لمن يرغب في التحول إلى مجالات الذكاء الاصطناعي والبيانات وهندسة البرمجيات." },
+    history: { zh: "Coursera 由斯坦福大学计算机科学系教授吴恩达（Andrew Ng）和 Daphne Koller 于 2012 年 4 月共同创立。此前吴恩达在斯坦福开设的免费机器学习公开课吸引了全球 10 万余人报名，让两人看到了在线高等教育的巨大潜力。Coursera 上线后迅速与普林斯顿、密歇根、宾夕法尼亚等美国名校达成合作。2013 年获得包括 KPCB、New Enterprise Associates 等顶级 VC 数千万美元融资。2020 年疫情期间用户数暴涨至 8000 万，2021 年在纽交所上市，市值一度突破 70 亿美元。近年 Coursera 大力推广「专业证书（Professional Certificates）」路线，与 Google、IBM、Meta 等联合推出的证书课程已成为海外就业市场公认的技能凭证。", en: "Coursera was co-founded in April 2012 by Stanford CS professors Andrew Ng and Daphne Koller. Andrew Ng's earlier free Stanford machine learning MOOC attracted 100,000+ global enrollments, revealing the massive potential of online higher education. Coursera quickly partnered with Princeton, Michigan, Penn and other top US universities. In 2013, it raised tens of millions from top VCs including KPCB and New Enterprise Associates. During COVID-19 in 2020, users surged past 80 million, and in 2021 Coursera IPO'd on NYSE with a peak valuation over $7 billion. In recent years Coursera has aggressively promoted its 'Professional Certificates' track — programs jointly launched with Google, IBM and Meta have become recognized skill credentials in the global job market.", ar: "أسست Coursera في أبريل 2012 من قِبل أستاذَي علوم الحاسوب في ستانفورد أندرو نغ ودافني كولر. قبل ذلك، جذبت دورة التعلم الآلي المجانية التي قدمها أندرو نغ في ستانفورد أكثر من 100 ألف متعلم عالمياً، مما كشف الإمكانات الهائلة للتعليم العالي الإلكتروني. سرعان ما عقدت Coursera شراكات مع برينستون وميشيغان وبنسلفانيا وجامعات أمريكية رائدة أخرى. في 2013، جمعت عشرات الملايين من كبار المستثمرين مثل KPCB وNew Enterprise Associates. خلال جائحة كوفيد-19 عام 2020، تجاوز عدد المستخدمين 80 مليوناً، وفي 2021 طُرحت في بورصة نيويورك بقيمة سوقية تجاوزت 7 مليارات دولار في ذروتها. مؤخراً، روّجت Coursera بقوة لشهاداتها المهنية 'Professional Certificates' — البرامج المشتركة مع Google وIBM وMeta باتت شهادات مهارة معترف بها في سوق العمل العالمي." },
+    features: [
+      {
+        icon: "🏛️",
+        title: { zh: "名校课程", en: "Top University Courses", ar: "دورات الجامعات المرموقة" },
+        desc: { zh: "斯坦福、耶鲁、密歇根等 275+ 顶级院校及企业开设的正规课程", en: "Accredited courses from 275+ top universities and companies including Stanford, Yale and Michigan", ar: "دورات معتمدة من أكثر من 275 جامعة وشركة رائدة، منها ستانفورد وييل وميشيغان" },
+      },
+      {
+        icon: "📜",
+        title: { zh: "专业证书", en: "Professional Certificates", ar: "شهادات مهنية" },
+        desc: { zh: "Google 数据分析、IBM 数据科学、Meta 前端等含金量高的求职证书", en: "High-value job-market certificates like Google Data Analytics, IBM Data Science and Meta Front-End", ar: "شهادات ذات قيمة عالية في سوق العمل مثل Google Data Analytics وIBM Data Science وMeta Front-End" },
+      },
+      {
+        icon: "🎓",
+        title: { zh: "在线学位", en: "Online Degrees", ar: "درجات جامعية إلكترونية" },
+        desc: { zh: "支持攻读伊利诺伊大学 MBA、密歇根 MADS 等完整学位项目", en: "Enroll in full degree programs like Illinois iMBA and Michigan Master of Applied Data Science", ar: "التسجيل في برامج شهادات كاملة مثل iMBA من إلينوي وMaster of Applied Data Science من ميشيغان" },
+      },
+      {
+        icon: "🆓",
+        title: { zh: "免费旁听", en: "Free Auditing", ar: "الاستماع المجاني" },
+        desc: { zh: "多数课程支持免费旁听全部视频和作业，需要证书时才付费", en: "Most courses can be audited free (videos and assignments) — pay only to earn a certificate", ar: "معظم الدورات يمكن حضورها مجاناً (الفيديو والواجبات) — ادفع فقط للحصول على الشهادة" },
+      },
+      {
+        icon: "💼",
+        title: { zh: "求职服务", en: "Career Services", ar: "خدمات المهنة" },
+        desc: { zh: "证书学员可获得简历辅导、模拟面试和 150 家伙伴雇主的直接推荐通道", en: "Certificate learners get resume coaching, mock interviews and direct referral to 150+ hiring partners", ar: "يحصل حاملو الشهادات على تدريب على السيرة الذاتية ومقابلات تجريبية وترشيح مباشر لأكثر من 150 شركة توظيف" },
+      },
+      {
+        icon: "🌐",
+        title: { zh: "多语言字幕", en: "Multilingual Subtitles", ar: "ترجمات متعددة اللغات" },
+        desc: { zh: "主流课程配备中文、阿拉伯语等 40+ 语言字幕", en: "Popular courses feature 40+ language subtitles including Chinese and Arabic", ar: "الدورات الشهيرة تحتوي على ترجمات بأكثر من 40 لغة تشمل الصينية والعربية" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "注册账号", en: "Create Account", ar: "إنشاء حساب" },
+        desc: { zh: "访问 coursera.org 使用邮箱注册，中国大陆可直接访问但视频加载较慢，推荐科学上网", en: "Sign up at coursera.org with your email — accessible in mainland China though video loads slowly; a VPN is recommended", ar: "سجّل في coursera.org بالبريد الإلكتروني — متاح في الصين القارية لكن مقاطع الفيديو تُحمّل ببطء؛ يُنصح باستخدام VPN" },
+      },
+      {
+        title: { zh: "选择学习路径", en: "Choose a Learning Path", ar: "اختيار مسار التعلم" },
+        desc: { zh: "根据目标选择单门课程、专项课程（Specialization）、专业证书或完整学位", en: "Pick between a single course, a Specialization, a Professional Certificate or a full degree based on your goal", ar: "اختر بين دورة واحدة، أو Specialization، أو شهادة مهنية، أو درجة كاملة وفق هدفك" },
+      },
+      {
+        title: { zh: "订阅或旁听", en: "Subscribe or Audit", ar: "الاشتراك أو الاستماع" },
+        desc: { zh: "Coursera Plus 会员 $59/月可无限畅学 7000+ 课程，或选择 7 天免费试用后按需付费", en: "Coursera Plus at $59/month unlocks unlimited access to 7000+ courses, or start with a 7-day free trial", ar: "اشتراك Coursera Plus بـ 59$ شهرياً يفتح الوصول لأكثر من 7000 دورة، أو ابدأ بتجربة مجانية لـ 7 أيام" },
+      },
+      {
+        title: { zh: "获取证书", en: "Earn Certificates", ar: "الحصول على الشهادات" },
+        desc: { zh: "完成所有测验和作业后可下载 PDF 证书，可添加到 LinkedIn 个人主页", en: "Finish all quizzes and assignments to download a PDF certificate — you can add it directly to your LinkedIn profile", ar: "أكمل جميع الاختبارات والواجبات لتنزيل شهادة PDF — يمكنك إضافتها مباشرة إلى ملفك على LinkedIn" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "Coursera 证书有含金量吗？", en: "Are Coursera certificates valuable?", ar: "هل شهادات Coursera قيّمة؟" },
+        a: { zh: "含金量取决于课程类型。免费单门课程的完成证书作用有限；但 Google、IBM、Meta 等联合发布的 Professional Certificate 在海外求职市场认可度较高，尤其对转行至数据分析、云计算、UX 设计等岗位非常有帮助。伊利诺伊 iMBA、宾大 MCIT 等在线学位则与线下学位享有同等法律效力。", en: "Value varies by type. Single-course completion certificates carry limited weight, but Professional Certificates jointly issued with Google, IBM and Meta are well-recognized in the overseas job market — especially useful when pivoting into data analytics, cloud, or UX. Online degrees like Illinois iMBA and Penn MCIT carry the same legal weight as their on-campus equivalents.", ar: "تختلف القيمة حسب النوع. شهادات إكمال دورة واحدة ذات وزن محدود، لكن الشهادات المهنية المشتركة مع Google وIBM وMeta معترف بها جيداً في سوق العمل الأجنبي — مفيدة خصوصاً عند التحول إلى تحليل البيانات أو الحوسبة السحابية أو تصميم UX. الدرجات الإلكترونية مثل iMBA من إلينوي وMCIT من بنسلفانيا تحمل نفس الاعتراف القانوني كنظيراتها الحضورية." },
+      },
+      {
+        q: { zh: "国内使用 Coursera 有什么障碍？", en: "Are there obstacles using Coursera from China?", ar: "هل هناك عوائق لاستخدام Coursera من الصين؟" },
+        a: { zh: "网站本身在中国大陆可以访问，但视频加载普遍缓慢，作业提交也常出现超时。此外部分课程（如涉及加密学、政治敏感话题的美国大学课程）会因区域版权限制无法在中国区打开。建议使用瞬云等科学上网工具连接美国节点，可显著改善体验并解锁全部课程。", en: "The site itself is accessible in mainland China but videos load slowly and assignment submissions frequently time out. Some courses (US university content covering cryptography or politically sensitive topics) are geo-locked in the China region. Connecting via a VPN like ShunYun to a US node dramatically improves the experience and unlocks all courses.", ar: "الموقع نفسه متاح في الصين القارية لكن مقاطع الفيديو تُحمّل ببطء، وكثيراً ما تنتهي مهلة تسليم الواجبات. بعض الدورات (لجامعات أمريكية تتناول التشفير أو موضوعات سياسية حساسة) مقيدة جغرافياً في منطقة الصين. الاتصال عبر VPN مثل ShunYun بخادم أمريكي يحسّن التجربة بشكل ملحوظ ويفتح جميع الدورات." },
+      },
+    ],
+  },
+  {
+    slug: "duolingo",
+    category: "learning",
+    logo: "🦉",
+    color: "#58cc02",
+    officialUrl: "https://www.duolingo.com",
+    founded: "2011-11-30",
+    founder: "Luis von Ahn, Severin Hacker",
+    headquarter: "Pittsburgh, PA, USA",
+    name: { zh: "Duolingo", en: "Duolingo", ar: "Duolingo" },
+    tagline: { zh: "全球最受欢迎的免费语言学习 App", en: "The World's Most Popular Free Language Learning App", ar: "التطبيق الأكثر شعبية عالمياً لتعلم اللغات مجاناً" },
+    description: { zh: "游戏化外语学习平台，通过每天 5 分钟的短课程和绿猫头鹰吉祥物「多儿」的督促，帮助全球超过 5 亿用户学习英语、日语、西班牙语等 40+ 语言。", en: "A gamified language-learning platform helping 500M+ global users master English, Japanese, Spanish and 40+ languages through 5-minute daily lessons and the ever-persistent green owl mascot Duo.", ar: "منصة تعلم لغات بأسلوب الألعاب تساعد أكثر من 500 مليون مستخدم عالمياً على إتقان الإنجليزية واليابانية والإسبانية وأكثر من 40 لغة عبر دروس يومية من 5 دقائق وتذكيرات البومة الخضراء Duo الشهيرة." },
+    longDescription: { zh: "Duolingo（多邻国）是全球下载量最大的语言学习应用。由卡内基梅隆大学计算机系教授 Luis von Ahn 与其博士生 Severin Hacker 于 2011 年在美国匹兹堡创立。Duolingo 采用免费+订阅（Super Duolingo）双模式，通过短课时、连胜（Streak）、排行榜、宝石经济等游戏化设计极大降低了坚持学习外语的心理门槛。截至 2024 年月活用户 1.03 亿、日活 3400 万，覆盖英语、西班牙语、日语、韩语、法语等 40 多种语言。旗下的 Duolingo English Test（DET）已获得美国、英国、加拿大等国 5000+ 高校认可，是留学申请中相较托福雅思更便宜、更便捷的英语能力证明。", en: "Duolingo is the world's most-downloaded language-learning app. It was founded in 2011 in Pittsburgh by Carnegie Mellon computer science professor Luis von Ahn and his PhD student Severin Hacker. Duolingo runs a free + subscription (Super Duolingo) model, using short lessons, streaks, leaderboards and a gem economy to massively lower the psychological barrier of learning a foreign language long-term. As of 2024 it has 103M monthly and 34M daily active users, covering 40+ languages including English, Spanish, Japanese, Korean and French. Its Duolingo English Test (DET) is now accepted by 5,000+ universities in the US, UK, Canada and elsewhere, offering a cheaper and faster proof of English proficiency than TOEFL or IELTS for study-abroad applications.", ar: "Duolingo هو تطبيق تعلم اللغات الأكثر تنزيلاً في العالم. تأسس عام 2011 في بيتسبرغ من قِبل أستاذ علوم الحاسوب في جامعة كارنيغي ميلون Luis von Ahn وطالبه المرشح للدكتوراه Severin Hacker. يعمل Duolingo بنموذج مجاني + اشتراك (Super Duolingo)، مستخدماً دروساً قصيرة و'Streaks' وقوائم المتصدرين واقتصاد الجواهر لخفض الحاجز النفسي أمام الاستمرار في تعلم لغة أجنبية بشكل جذري. حتى عام 2024، لديه 103 مليون مستخدم نشط شهرياً و34 مليون يومياً، ويغطي أكثر من 40 لغة تشمل الإنجليزية والإسبانية واليابانية والكورية والفرنسية. اختبار Duolingo English Test (DET) بات معتمداً من قِبل أكثر من 5,000 جامعة في الولايات المتحدة وبريطانيا وكندا وغيرها، ويُعدّ إثباتاً أرخص وأسرع للكفاءة في الإنجليزية مقارنة بـ TOEFL أو IELTS لطلبات الدراسة بالخارج." },
+    history: { zh: "Duolingo 由危地马拉计算机科学家 Luis von Ahn 于 2011 年 11 月创立。Luis 此前发明的 reCAPTCHA 验证码系统被 Google 收购后，他决定用「众包」思路解决另一个全球性问题：让贫困人口也能免费学习外语。Duolingo 于 2012 年公开测试，到 2014 年用户突破 1 亿。2019 年推出 Duolingo English Test，被哈佛、耶鲁等名校迅速接受，替代疫情期间线下考试。2021 年 7 月 Duolingo 在纳斯达克上市，市值超过 65 亿美元。近年 Duolingo 大量引入 AI 技术，2023 年推出基于 GPT-4 的 Duolingo Max，为付费用户提供个性化对话陪练和 AI 语法解释。", en: "Duolingo was founded in November 2011 by Guatemalan computer scientist Luis von Ahn. After his earlier invention reCAPTCHA was acquired by Google, he set out to solve another global problem with a crowdsourced approach: making foreign language learning free even for the world's poorest. Duolingo entered public beta in 2012 and passed 100 million users by 2014. In 2019 it launched the Duolingo English Test, quickly accepted by top universities including Harvard and Yale — replacing in-person exams during COVID. In July 2021 Duolingo IPO'd on NASDAQ at over $6.5 billion valuation. Recently Duolingo has aggressively adopted AI: in 2023 it released Duolingo Max powered by GPT-4, offering paying users personalized conversation practice and AI grammar explanations.", ar: "أسس Duolingo عالم الحاسوب الغواتيمالي Luis von Ahn في نوفمبر 2011. بعد أن استحوذت Google على اختراعه السابق reCAPTCHA، انطلق لحل مشكلة عالمية أخرى بنهج تعاوني: جعل تعلم اللغات الأجنبية مجانياً حتى لأفقر سكان العالم. دخل Duolingo النسخة التجريبية العامة في 2012، وتجاوز 100 مليون مستخدم بحلول 2014. في 2019 أطلق اختبار Duolingo English Test، الذي قبلته سريعاً جامعات مرموقة مثل هارفارد وييل — كبديل للاختبارات الحضورية خلال جائحة كوفيد. في يوليو 2021 طُرحت الشركة في ناسداك بقيمة تجاوزت 6.5 مليار دولار. مؤخراً، تبنت Duolingo تقنيات الذكاء الاصطناعي بقوة: أطلقت عام 2023 خدمة Duolingo Max المدعومة بـ GPT-4، لتقدم للمشتركين تدريباً على المحادثة مخصصاً وشروحات نحوية بالذكاء الاصطناعي." },
+    features: [
+      {
+        icon: "🎮",
+        title: { zh: "游戏化课程", en: "Gamified Lessons", ar: "دروس بأسلوب اللعبة" },
+        desc: { zh: "关卡、连胜、宝石、排行榜设计让每天 5 分钟学习像玩游戏一样上瘾", en: "Levels, streaks, gems and leaderboards turn 5 minutes of daily study into an addictive game", ar: "المستويات وSteaks والجواهر ولوحات المتصدرين تحول 5 دقائق من الدراسة اليومية إلى لعبة ممتعة" },
+      },
+      {
+        icon: "🌍",
+        title: { zh: "40+ 语言", en: "40+ Languages", ar: "أكثر من 40 لغة" },
+        desc: { zh: "支持英、日、韩、西、法、德、阿拉伯语等主流语言及爱尔兰语等小众语言", en: "Supports English, Japanese, Korean, Spanish, French, German, Arabic and niche languages like Irish", ar: "يدعم الإنجليزية واليابانية والكورية والإسبانية والفرنسية والألمانية والعربية ولغات نادرة مثل الأيرلندية" },
+      },
+      {
+        icon: "🤖",
+        title: { zh: "AI 对话陪练", en: "AI Conversation Practice", ar: "تدريب محادثة بالذكاء الاصطناعي" },
+        desc: { zh: "Duolingo Max 使用 GPT-4 为付费用户提供角色扮演对话和语法解释", en: "Duolingo Max uses GPT-4 to give subscribers roleplay conversations and grammar explanations", ar: "Duolingo Max يستخدم GPT-4 لتقديم محادثات تمثيلية وشروحات نحوية للمشتركين" },
+      },
+      {
+        icon: "📝",
+        title: { zh: "官方英语考试", en: "Official English Test", ar: "اختبار إنجليزي معتمد" },
+        desc: { zh: "Duolingo English Test（DET）$59 一次，被 5000+ 海外高校认可作为托福雅思替代", en: "The $59 Duolingo English Test (DET) is accepted by 5000+ overseas universities as a TOEFL/IELTS alternative", ar: "اختبار Duolingo English Test (DET) بسعر 59$ ومقبول في أكثر من 5000 جامعة أجنبية كبديل عن TOEFL/IELTS" },
+      },
+      {
+        icon: "🦉",
+        title: { zh: "多儿吉祥物", en: "Duo the Owl Mascot", ar: "شخصية البومة Duo" },
+        desc: { zh: "「你 5 分钟都不学吗」的绿猫头鹰吉祥物是全球社交媒体上的顶级 meme 素材", en: "The 'you didn't study for 5 minutes?' green owl mascot is one of the world's top social media memes", ar: "شخصية البومة الخضراء 'ألم تدرس 5 دقائق فقط؟' من أشهر ميمز وسائل التواصل الاجتماعي عالمياً" },
+      },
+      {
+        icon: "👨‍👩‍👧",
+        title: { zh: "家庭方案", en: "Family Plan", ar: "خطة العائلة" },
+        desc: { zh: "Super Duolingo 家庭版 $120/年，支持 6 人共享，无广告、无限爱心", en: "Super Duolingo Family at $120/year shares with 6 members — ad-free with unlimited hearts", ar: "خطة Super Duolingo العائلية بـ 120$ سنوياً تُشارك مع 6 أعضاء — بدون إعلانات ومع قلوب غير محدودة" },
+      },
+    ],
+    howToUse: [
+      {
+        title: { zh: "下载应用", en: "Download the App", ar: "تنزيل التطبيق" },
+        desc: { zh: "从 App Store / Google Play / duolingo.com 下载，中国大陆可直接使用，无需科学上网", en: "Download from the App Store, Google Play or duolingo.com — fully accessible in mainland China without a VPN", ar: "نزّله من App Store أو Google Play أو duolingo.com — متاح تماماً في الصين القارية دون الحاجة لـ VPN" },
+      },
+      {
+        title: { zh: "选择学习目标", en: "Set a Learning Goal", ar: "تحديد هدف التعلم" },
+        desc: { zh: "选择母语与目标语言，并根据水平做入门测试，AI 会自动为你分配起点关卡", en: "Pick your native and target language, take a placement test — AI will automatically assign your starting level", ar: "اختر لغتك الأم واللغة الهدف، وقم بامتحان التسكين — سيحدد الذكاء الاصطناعي مستواك تلقائياً" },
+      },
+      {
+        title: { zh: "养成连胜习惯", en: "Build Your Streak", ar: "بناء سلسلة الأيام" },
+        desc: { zh: "每天完成一节课即可维持连胜，多儿会通过推送提醒你不要断掉记录", en: "Complete one lesson a day to maintain your streak — Duo will push notifications to keep your record alive", ar: "أكمل درساً واحداً يومياً للحفاظ على السلسلة — ستذكرك Duo بالتنبيهات لعدم كسر السجل" },
+      },
+      {
+        title: { zh: "解锁 Super 会员", en: "Unlock Super Duolingo", ar: "فتح اشتراك Super" },
+        desc: { zh: "月付 $6.99 或年付 $59.99 解锁无广告、无限爱心、离线课程等所有高级功能", en: "Pay $6.99/month or $59.99/year to unlock ad-free, unlimited hearts, offline lessons and all premium features", ar: "ادفع 6.99$ شهرياً أو 59.99$ سنوياً لفتح الوصول بدون إعلانات، قلوب غير محدودة، دروس بدون إنترنت وجميع الميزات المميزة" },
+      },
+    ],
+    faqs: [
+      {
+        q: { zh: "Duolingo 真能学会一门外语吗？", en: "Can you really become fluent with Duolingo?", ar: "هل يمكن فعلاً إتقان لغة عبر Duolingo؟" },
+        a: { zh: "Duolingo 非常擅长帮零基础学习者建立词汇、基本语法和阅读能力，坚持一年可达到欧洲共同语言参考标准（CEFR）A2-B1 水平，足够日常旅游和简单交流。但要达到 B2 及以上流利水平，仍需搭配语言交换、外教对话或看剧等真实语言输入。它是最佳的启动工具，而不是唯一工具。", en: "Duolingo is excellent for absolute beginners to build vocabulary, basic grammar and reading skills — a year of consistent daily use can reach CEFR A2-B1, enough for tourism and simple conversation. However, reaching B2+ fluency requires supplementing with language exchange, tutor sessions or immersive input like TV shows. It's the best starter tool, not the only tool.", ar: "Duolingo ممتاز للمبتدئين تماماً لبناء المفردات والقواعد الأساسية ومهارات القراءة — سنة من الاستخدام اليومي المنتظم يمكن أن توصلك لمستوى CEFR A2-B1، وهو كافٍ للسياحة والمحادثات البسيطة. لكن الوصول إلى مستوى الطلاقة B2 وما فوق يتطلب استكماله بتبادل لغوي أو جلسات مع مدرس أو محتوى غامر مثل المسلسلات. إنه أفضل أداة للبدء، وليس الأداة الوحيدة." },
+      },
+      {
+        q: { zh: "Duolingo English Test 能替代托福雅思吗？", en: "Can DET replace TOEFL or IELTS?", ar: "هل يمكن أن يحل DET محل TOEFL أو IELTS؟" },
+        a: { zh: "对大多数英美加澳留学申请来说可以。DET 一次 $59（约为托福的 1/3 价），可在家用电脑完成，2 天出成绩，被 5000+ 高校包括耶鲁、哥大、多大、UBC 认可。但顶尖商学院 MBA、部分医学法学项目仍要求托福或雅思，报考前务必核实目标院校的官方录取要求。", en: "For most study-abroad applications to the US, UK, Canada and Australia, yes. DET costs $59 (about 1/3 of TOEFL), can be taken at home on a computer, delivers results in 2 days, and is accepted by 5000+ universities including Yale, Columbia, Toronto and UBC. However top MBA programs and some medical/law programs still require TOEFL or IELTS — always verify your target school's official admission requirements first.", ar: "بالنسبة لمعظم طلبات الدراسة في الولايات المتحدة والمملكة المتحدة وكندا وأستراليا، نعم. يكلف DET 59$ (نحو ثلث سعر TOEFL)، ويمكن تأديته من المنزل على الحاسوب، وتصل النتائج خلال يومين، ومقبول لدى أكثر من 5000 جامعة منها ييل وكولومبيا وتورنتو وUBC. لكن بعض برامج MBA النخبوية وبعض برامج الطب والقانون لا تزال تشترط TOEFL أو IELTS — تحقق دائماً من متطلبات القبول الرسمية للجامعة المستهدفة أولاً." },
+      },
+    ],
+  },
 ];
 
 export const CATEGORIES: CategoryInfo[] = [
