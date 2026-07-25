@@ -7,11 +7,18 @@ export const dynamic = "force-static";
 const COMPARE_PAIRS = [
   ["chatgpt", "claude"],
   ["chatgpt", "perplexity"],
+  ["chatgpt", "gemini"],
   ["chatgpt", "midjourney"],
   ["claude", "perplexity"],
+  ["claude", "gemini"],
   ["youtube", "netflix"],
+  ["youtube", "spotify"],
+  ["discord", "telegram"],
   ["discord", "notion"],
   ["github", "notion"],
+  ["linkedin", "twitter-x"],
+  ["shopify", "notion"],
+  ["coursera", "duolingo"],
 ];
 
 export default function sitemap() {

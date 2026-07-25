@@ -43,8 +43,27 @@ export default async function HomePage({
   const l = lang as Lang;
   const t = UI_TEXT[l];
 
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: l === "zh" ? "出海必备工具目录" : l === "en" ? "Overseas Toolkit Directory" : "دليل أدوات المغتربين",
+    description: l === "zh" ? "精选全球出海必备工具，包含 AI、社交、开发、视频、办公、电商、学习等分类" : l === "en" ? "Curated directory of essential tools for going global, covering AI, social, dev, video, office, e-commerce, and learning" : "دليل منسق لأفضل الأدوات العالمية يشمل الذكاء الاصطناعي والتواصل الاجتماعي والتطوير والتعليم والتجارة الإلكترونية",
+    numberOfItems: TOOLS.length,
+    itemListElement: TOOLS.map((tool, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: tool.name[l],
+      url: `https://hytuijian.com/${l}/tools/${tool.slug}`,
+      description: tool.description[l],
+    })),
+  };
+
   return (
     <div dir={l === "ar" ? "rtl" : "ltr"}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <Header lang={l} t={t as any} />
       <main id="main-content">
         <ToolsSection lang={l} tools={TOOLS} />

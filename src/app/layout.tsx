@@ -16,9 +16,18 @@ export const metadata: Metadata = {
     "科学上网工具",
     "ChatGPT怎么用",
     "ChatGPT国内使用教程",
+    "Google Gemini使用教程",
+    "Claude AI怎么用",
     "YouTube国内访问",
     "GitHub加速",
     "Midjourney使用教程",
+    "Telegram使用教程",
+    "LinkedIn国内使用",
+    "Figma使用教程",
+    "Shopify开店教程",
+    "PayPal注册教程",
+    "Coursera课程推荐",
+    "Duolingo学语言",
     "出海工具大全",
     "VPN推荐",
     "机场推荐",
@@ -84,22 +93,31 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "出海工具箱",
-              alternateName: ["Overseas Toolkit", "Chuhai Tools"],
-              url: "https://hytuijian.com",
-              description:
-                "出海工具箱 - 全球出海必备工具推荐站，提供详细的功能介绍、注册教程和使用指南。",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                  "@type": "EntryPoint",
-                  urlTemplate:
-                    "https://hytuijian.com/zh?search={search_term_string}",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://hytuijian.com/#website",
+                  name: "出海工具箱",
+                  alternateName: ["Overseas Toolkit", "Chuhai Tools", "出海工具推荐"],
+                  url: "https://hytuijian.com",
+                  description: "出海工具箱 - 全球出海必备工具推荐站，提供 ChatGPT、Claude、Gemini、YouTube、GitHub、Shopify 等工具的详细注册教程和使用指南。",
+                  inLanguage: ["zh-CN", "en", "ar"],
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: { "@type": "EntryPoint", urlTemplate: "https://hytuijian.com/zh?search={search_term_string}" },
+                    "query-input": "required name=search_term_string",
+                  },
                 },
-                "query-input": "required name=search_term_string",
-              },
-              inLanguage: ["zh-CN", "en", "ar"],
+                {
+                  "@type": "Organization",
+                  "@id": "https://hytuijian.com/#organization",
+                  name: "出海工具箱",
+                  alternateName: "Overseas Toolkit",
+                  url: "https://hytuijian.com",
+                  description: "专注于为中文用户提供全球出海工具的使用教程、注册指南与科学上网攻略的权威导航站。收录 ChatGPT、Claude、Gemini、YouTube、GitHub、Shopify、Duolingo 等 20+ 款主流工具，支持中文、英文、阿拉伯文三语。",
+                  knowsAbout: ["AI工具", "社交媒体", "开发工具", "视频平台", "办公协作", "电商金融", "学习资源", "科学上网"],
+                },
+              ],
             }),
           }}
         />

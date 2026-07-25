@@ -125,12 +125,19 @@ export default async function ToolDetailPage({
       },
       {
         "@type": "SoftwareApplication",
-        name: tool.name[l],
-        description: tool.description[l],
+        "@id": `${SITE_URL}/${l}/tools/${slug}#software`,
+        name: tool.name["en"],
+        alternateName: tool.name[l],
+        description: tool.longDescription[l],
         url: tool.officialUrl,
+        sameAs: tool.officialUrl,
         datePublished: tool.founded,
+        dateModified: new Date().toISOString().split("T")[0],
         creator: { "@type": "Organization", name: tool.founder },
         applicationCategory: tool.category,
+        operatingSystem: "Web, iOS, Android",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: l === "zh" ? "提供免费版本" : l === "en" ? "Free tier available" : "نسخة مجانية متاحة" },
+        inLanguage: l === "zh" ? "zh-CN" : l === "en" ? "en-US" : "ar",
       },
       {
         "@type": "FAQPage",
@@ -206,7 +213,7 @@ export default async function ToolDetailPage({
                   <div className="tool-detail-info-item" style={{ marginLeft: "auto" }}>
                     <span className="tool-detail-info-icon" aria-hidden="true">🔄</span>
                     <span style={{ fontSize: 12, color: "var(--text-muted)" }}>
-                      {l === "zh" ? "内容更新：2025年7月" : l === "en" ? "Updated: Jul 2025" : "آخر تحديث: يوليو 2025"}
+                      {l === "zh" ? "内容更新：2026年7月" : l === "en" ? "Updated: Jul 2026" : "آخر تحديث: يوليو 2026"}
                     </span>
                   </div>
                   <a
