@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TOOLS } from "@/data/tools";
-import { UI_TEXT, SITE_URL, AIRPORT_LINK, type Lang } from "@/data/i18n";
+import { UI_TEXT, SITE_URL, type Lang } from "@/data/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ToolLogo from "@/components/ToolLogo";
@@ -38,7 +38,7 @@ export async function generateMetadata({
   if (lang !== "zh" && lang !== "en" && lang !== "ar") return {};
   const l = lang as Lang;
 
-  const [slugA, , slugB] = pair.split("-vs-");
+  const [slugA, slugB] = pair.split("-vs-");
   const toolA = TOOLS.find((t) => t.slug === slugA);
   const toolB = TOOLS.find((t) => t.slug === slugB);
   if (!toolA || !toolB) return {};
@@ -48,25 +48,25 @@ export async function generateMetadata({
 
   const title =
     l === "zh"
-      ? `${nameA} vs ${nameB}：哪个更好用？2025年深度对比 | 出海工具箱`
+      ? `${nameA} vs ${nameB} 2026 深度对比：哪个更好用？`
       : l === "en"
-      ? `${nameA} vs ${nameB}: Which is Better in 2025? | Overseas Toolkit`
-      : `${nameA} مقابل ${nameB}: أيهما أفضل في 2025؟ | صندوق أدوات المغتربين`;
+      ? `${nameA} vs ${nameB} 2026 — Which Is Better?`
+      : `${nameA} مقابل ${nameB} 2026 — أيهما أفضل؟`;
 
   const desc =
     l === "zh"
-      ? `${nameA} 和 ${nameB} 哪个更好？本文从功能、价格、使用场景全面对比，帮你选出最适合的工具。`
+      ? `2026 年 ${nameA} 和 ${nameB} 哪个更好？从功能、价格、使用场景到国内访问方式全面对比，附机场推荐与加速方案。`
       : l === "en"
-      ? `${nameA} vs ${nameB} — a full comparison of features, pricing, and use cases to help you choose the right tool.`
-      : `مقارنة شاملة بين ${nameA} و ${nameB} من حيث الميزات والأسعار وحالات الاستخدام لمساعدتك في الاختيار الأمثل.`;
+      ? `${nameA} vs ${nameB} in 2026 — a full comparison of features, pricing, use cases, and how to access from restricted regions.`
+      : `مقارنة شاملة بين ${nameA} و ${nameB} في 2026: الميزات والأسعار وحالات الاستخدام وطرق الوصول.`;
 
   return {
     title,
     description: desc,
     keywords:
       l === "zh"
-        ? [`${nameA} vs ${nameB}`, `${nameA}和${nameB}哪个好`, `${nameA}对比${nameB}`, "出海工具对比"]
-        : [`${nameA} vs ${nameB}`, `${nameA} or ${nameB}`, `${nameA} alternative`, `compare ${nameA} ${nameB}`],
+        ? [`${nameA} vs ${nameB}`, `${nameA}和${nameB}哪个好`, `${nameA}对比${nameB}`, `${nameA} 2026`, `${nameB} 2026`, "出海工具对比", "机场推荐"]
+        : [`${nameA} vs ${nameB}`, `${nameA} or ${nameB}`, `${nameA} alternative`, `compare ${nameA} ${nameB}`, `${nameA} 2026`],
     alternates: {
       canonical: `${SITE_URL}/${l}/compare/${pair}`,
       languages: {
@@ -241,7 +241,7 @@ export default async function ComparePage({
   const l = lang as Lang;
   const t = UI_TEXT[l];
 
-  const [slugA, , slugB] = pair.split("-vs-");
+  const [slugA, slugB] = pair.split("-vs-");
   const toolA = TOOLS.find((t) => t.slug === slugA);
   const toolB = TOOLS.find((t) => t.slug === slugB);
   if (!toolA || !toolB) notFound();
@@ -258,12 +258,21 @@ export default async function ComparePage({
     "@graph": [
       {
         "@type": "Article",
-        headline: l === "zh" ? `${nameA} vs ${nameB} 对比` : `${nameA} vs ${nameB} Comparison`,
+        headline: l === "zh" ? `${nameA} vs ${nameB} 2026 深度对比` : l === "en" ? `${nameA} vs ${nameB} 2026 Comparison` : `${nameA} مقابل ${nameB} 2026`,
         description: summary?.[l] ?? "",
-        dateModified: "2025-07-18",
+        datePublished: "2026-07-15",
+        dateModified: new Date().toISOString().split("T")[0],
         author: { "@type": "Organization", name: l === "zh" ? "出海工具箱" : "Overseas Toolkit" },
         publisher: { "@type": "Organization", name: l === "zh" ? "出海工具箱" : "Overseas Toolkit", url: SITE_URL },
         inLanguage: l === "zh" ? "zh-CN" : l === "en" ? "en-US" : "ar",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: l === "zh" ? "首页" : l === "en" ? "Home" : "الرئيسية", item: `${SITE_URL}/${l}` },
+          { "@type": "ListItem", position: 2, name: l === "zh" ? "工具对比" : l === "en" ? "Compare" : "مقارنة الأدوات", item: `${SITE_URL}/${l}/compare` },
+          { "@type": "ListItem", position: 3, name: `${nameA} vs ${nameB}`, item: `${SITE_URL}/${l}/compare/${pair}` },
+        ],
       },
       {
         "@type": "FAQPage",
@@ -335,7 +344,7 @@ export default async function ComparePage({
               {l === "zh" ? `${nameA} vs ${nameB}：哪个更好用？` : l === "en" ? `${nameA} vs ${nameB}: Which Should You Choose?` : `${nameA} مقابل ${nameB}: أيهما تختار؟`}
             </h1>
             <p style={{ fontSize: 14, color: "var(--text-muted)" }}>
-              🔄 {l === "zh" ? "内容更新：2025年7月" : l === "en" ? "Updated: July 2025" : "آخر تحديث: يوليو 2025"}
+              🔄 {l === "zh" ? "内容更新：2026年7月" : l === "en" ? "Updated: July 2026" : "آخر تحديث: يوليو 2026"}
             </p>
           </div>
         </div>

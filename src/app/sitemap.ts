@@ -1,5 +1,8 @@
 import { TOOLS } from "@/data/tools";
 import { NEWS } from "@/data/news";
+import { TOPICS } from "@/data/topics";
+import { BRANDS } from "@/data/brands";
+import { BRAND_COMPARE_PAIRS } from "@/data/brand-compare";
 import { SITE_URL } from "@/data/i18n";
 
 export const dynamic = "force-static";
@@ -26,10 +29,35 @@ export default function sitemap() {
   const langs = ["zh", "en", "ar"];
 
   const staticPages = langs.flatMap((lang) => [
-    { url: `${SITE_URL}/${lang}`,       lastModified: now, changeFrequency: "daily"   as const, priority: 1.0 },
-    { url: `${SITE_URL}/${lang}/about`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 },
-    { url: `${SITE_URL}/${lang}/news`,  lastModified: now, changeFrequency: "daily"   as const, priority: 0.9 },
+    { url: `${SITE_URL}/${lang}`,        lastModified: now, changeFrequency: "daily"   as const, priority: 1.0 },
+    { url: `${SITE_URL}/${lang}/about`,  lastModified: now, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE_URL}/${lang}/news`,   lastModified: now, changeFrequency: "daily"   as const, priority: 0.9 },
+    { url: `${SITE_URL}/${lang}/topics`, lastModified: now, changeFrequency: "weekly"  as const, priority: 0.9 },
+    { url: `${SITE_URL}/${lang}/brands`, lastModified: now, changeFrequency: "weekly"  as const, priority: 0.9 },
+    { url: `${SITE_URL}/${lang}/faq`,    lastModified: now, changeFrequency: "weekly"  as const, priority: 0.85 },
+    { url: `${SITE_URL}/${lang}/status`, lastModified: now, changeFrequency: "daily"   as const, priority: 0.7 },
   ]);
+
+  const topicPages = langs.flatMap((lang) =>
+    TOPICS.map((topic) => ({
+      url: `${SITE_URL}/${lang}/topics/${topic.slug}`,
+      lastModified: now, changeFrequency: "weekly" as const, priority: 0.85,
+    }))
+  );
+
+  const brandPages = langs.flatMap((lang) =>
+    BRANDS.map((brand) => ({
+      url: `${SITE_URL}/${lang}/brands/${brand.slug}`,
+      lastModified: now, changeFrequency: "weekly" as const, priority: 0.95,
+    }))
+  );
+
+  const brandComparePages = langs.flatMap((lang) =>
+    BRAND_COMPARE_PAIRS.map((p) => ({
+      url: `${SITE_URL}/${lang}/compare-airport/${p.slugA}-vs-${p.slugB}`,
+      lastModified: now, changeFrequency: "weekly" as const, priority: 0.9,
+    }))
+  );
 
   const toolPages = langs.flatMap((lang) =>
     TOOLS.map((tool) => ({
@@ -52,5 +80,5 @@ export default function sitemap() {
     }))
   );
 
-  return [...staticPages, ...toolPages, ...comparePages, ...newsPages];
+  return [...staticPages, ...topicPages, ...brandPages, ...toolPages, ...comparePages, ...brandComparePages, ...newsPages];
 }

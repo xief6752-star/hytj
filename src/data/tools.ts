@@ -265,7 +265,7 @@ export const TOOLS: Tool[] = [
     faqs: [
       {
         q: { zh: "国内直接能看YouTube吗？", en: "Why is YouTube not loading?", ar: "لماذا لا يعمل يوتيوب؟" },
-        a: { zh: "不能，YouTube 在中国大陆被屏蔽，必须使用科学上网工具才能访问。", en: "YouTube is blocked in mainland China. You need a VPN (e.g. ShunYun) to bypass the firewall and access it.", ar: "يوتيوب محجوب في الصين القارية وبعض الدول الأخرى. تحتاج لاستخدام VPN لتخطي الحجب." },
+        a: { zh: "不能，YouTube 在中国大陆被屏蔽，必须使用科学上网工具才能访问。", en: "YouTube is blocked in mainland China. You need a VPN (e.g. YunTu) to bypass the firewall and access it.", ar: "يوتيوب محجوب في الصين القارية وبعض الدول الأخرى. تحتاج لاستخدام VPN لتخطي الحجب." },
       },
       {
         q: { zh: "YouTube 怎么免广告？", en: "Is YouTube Premium worth it?", ar: "هل اشتراك Premium يستحق؟" },
@@ -340,7 +340,7 @@ export const TOOLS: Tool[] = [
     faqs: [
       {
         q: { zh: "推特在国内怎么用？", en: "Is X accessible in China?", ar: "هل موقع X محجوب في الصين؟" },
-        a: { zh: "必须使用科学上网工具才能访问 X（前 Twitter）。推荐使用瞬云等高速机场。", en: "No, X is blocked. You need a VPN connection to access it.", ar: "نعم، موقع X محجوب في الصين القارية وبعض الدول الأخرى. تحتاج لاستخدام VPN للوصول إليه." },
+        a: { zh: "必须使用科学上网工具才能访问 X（前 Twitter）。推荐使用云图等高速机场。", en: "No, X is blocked. You need a VPN connection to access it.", ar: "نعم، موقع X محجوب في الصين القارية وبعض الدول الأخرى. تحتاج لاستخدام VPN للوصول إليه." },
       },
       {
         q: { zh: "X Premium 是必须的吗？", en: "Is X free to use?", ar: "هل X مجاني؟" },
@@ -640,7 +640,7 @@ export const TOOLS: Tool[] = [
     faqs: [
       {
         q: { zh: "国内直接能用 Midjourney 吗？", en: "Can I run Midjourney without a VPN?", ar: "هل يعمل بدون VPN؟" },
-        a: { zh: "必须科学上网。由于 Midjourney 依赖 Discord，而后者在国内被完全屏蔽，所以需要使用加速器。", en: "No, Discord is blocked in China. You must use a VPN (e.g. ShunYun) to access the Discord workspace.", ar: "لا، خوادم Discord محجوبة في بعض المناطق. تحتاج لاستخدام VPN للوصول إلى بيئة التطبيق." },
+        a: { zh: "必须科学上网。由于 Midjourney 依赖 Discord，而后者在国内被完全屏蔽，所以需要使用加速器。", en: "No, Discord is blocked in China. You must use a VPN (e.g. YunTu) to access the Discord workspace.", ar: "لا، خوادم Discord محجوبة في بعض المناطق. تحتاج لاستخدام VPN للوصول إلى بيئة التطبيق." },
       },
       {
         q: { zh: "Midjourney 是免费的吗？", en: "Does Midjourney have a free trial?", ar: "هل تتوفر فترة تجريبية مجانية؟" },
@@ -940,7 +940,7 @@ export const TOOLS: Tool[] = [
     faqs: [
       {
         q: { zh: "Spotify 在国内能用吗？", en: "Can I use Spotify in China?", ar: "هل يمكن استخدام Spotify في الصين؟" },
-        a: { zh: "Spotify 未在中国大陆正式开通服务，网页版有时可加载，但客户端和支付功能受限。建议使用瞬云等科学上网工具连接海外节点，并使用境外区 App Store 下载客户端。", en: "Spotify is not officially available in mainland China. The web player sometimes loads, but the mobile app and payment system are restricted. Use a VPN like ShunYun to connect to an overseas server and download the client from a non-Chinese App Store region.", ar: "Spotify غير متوفر رسمياً في الصين القارية. مشغل الويب يعمل أحياناً، لكن التطبيق ونظام الدفع مقيدان. استخدم VPN مثل ShunYun للاتصال بخادم خارجي، ونزّل التطبيق من متجر App Store لمنطقة غير صينية." },
+        a: { zh: "Spotify 未在中国大陆正式开通服务，网页版有时可加载，但客户端和支付功能受限。建议使用云图等科学上网工具连接海外节点，并使用境外区 App Store 下载客户端。", en: "Spotify is not officially available in mainland China. The web player sometimes loads, but the mobile app and payment system are restricted. Use a VPN like YunTu to connect to an overseas server and download the client from a non-Chinese App Store region.", ar: "Spotify غير متوفر رسمياً في الصين القارية. مشغل الويب يعمل أحياناً، لكن التطبيق ونظام الدفع مقيدان. استخدم VPN مثل YunTu للاتصال بخادم خارجي، ونزّل التطبيق من متجر App Store لمنطقة غير صينية." },
       },
       {
         q: { zh: "免费版和 Premium 有什么区别？", en: "What's the difference between Free and Premium?", ar: "ما الفرق بين الإصدار المجاني وPremium؟" },
@@ -1244,7 +1244,7 @@ export const TOOLS: Tool[] = [
     faqs: [
       {
         q: { zh: "Figma 国内速度慢怎么办？", en: "Figma is slow in China. What can I do?", ar: "Figma بطيء في الصين، ماذا أفعل؟" },
-        a: { zh: "Figma 服务器在海外，国内直连速度不稳定。推荐使用瞬云等高速机场提升访问速度，或使用桌面客户端配合科学上网获得更流畅体验。", en: "Figma servers are hosted overseas and direct access from China is unstable. A high-speed VPN like ShunYun improves access, and the desktop app with a VPN offers the smoothest experience.", ar: "خوادم Figma خارج الصين والوصول المباشر غير مستقر. يُنصح باستخدام VPN عالي السرعة مثل ShunYun، مع تطبيق سطح المكتب لتجربة أكثر سلاسة." },
+        a: { zh: "Figma 服务器在海外，国内直连速度不稳定。推荐使用云图等高速机场提升访问速度，或使用桌面客户端配合科学上网获得更流畅体验。", en: "Figma servers are hosted overseas and direct access from China is unstable. A high-speed VPN like YunTu improves access, and the desktop app with a VPN offers the smoothest experience.", ar: "خوادم Figma خارج الصين والوصول المباشر غير مستقر. يُنصح باستخدام VPN عالي السرعة مثل YunTu، مع تطبيق سطح المكتب لتجربة أكثر سلاسة." },
       },
       {
         q: { zh: "Figma 免费版够用吗？", en: "Is the Figma free plan enough?", ar: "هل الباقة المجانية كافية؟" },
@@ -1473,7 +1473,7 @@ export const TOOLS: Tool[] = [
       },
       {
         q: { zh: "国内使用 Coursera 有什么障碍？", en: "Are there obstacles using Coursera from China?", ar: "هل هناك عوائق لاستخدام Coursera من الصين؟" },
-        a: { zh: "网站本身在中国大陆可以访问，但视频加载普遍缓慢，作业提交也常出现超时。此外部分课程（如涉及加密学、政治敏感话题的美国大学课程）会因区域版权限制无法在中国区打开。建议使用瞬云等科学上网工具连接美国节点，可显著改善体验并解锁全部课程。", en: "The site itself is accessible in mainland China but videos load slowly and assignment submissions frequently time out. Some courses (US university content covering cryptography or politically sensitive topics) are geo-locked in the China region. Connecting via a VPN like ShunYun to a US node dramatically improves the experience and unlocks all courses.", ar: "الموقع نفسه متاح في الصين القارية لكن مقاطع الفيديو تُحمّل ببطء، وكثيراً ما تنتهي مهلة تسليم الواجبات. بعض الدورات (لجامعات أمريكية تتناول التشفير أو موضوعات سياسية حساسة) مقيدة جغرافياً في منطقة الصين. الاتصال عبر VPN مثل ShunYun بخادم أمريكي يحسّن التجربة بشكل ملحوظ ويفتح جميع الدورات." },
+        a: { zh: "网站本身在中国大陆可以访问，但视频加载普遍缓慢，作业提交也常出现超时。此外部分课程（如涉及加密学、政治敏感话题的美国大学课程）会因区域版权限制无法在中国区打开。建议使用云图等科学上网工具连接美国节点，可显著改善体验并解锁全部课程。", en: "The site itself is accessible in mainland China but videos load slowly and assignment submissions frequently time out. Some courses (US university content covering cryptography or politically sensitive topics) are geo-locked in the China region. Connecting via a VPN like YunTu to a US node dramatically improves the experience and unlocks all courses.", ar: "الموقع نفسه متاح في الصين القارية لكن مقاطع الفيديو تُحمّل ببطء، وكثيراً ما تنتهي مهلة تسليم الواجبات. بعض الدورات (لجامعات أمريكية تتناول التشفير أو موضوعات سياسية حساسة) مقيدة جغرافياً في منطقة الصين. الاتصال عبر VPN مثل YunTu بخادم أمريكي يحسّن التجربة بشكل ملحوظ ويفتح جميع الدورات." },
       },
     ],
   },

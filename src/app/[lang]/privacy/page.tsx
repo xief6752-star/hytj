@@ -97,10 +97,10 @@ export default async function PrivacyPage({
               </h2>
               <p className="overview-text">
                 {l === "zh"
-                  ? "本站包含大量指向第三方网站的链接（包括工具官网和推荐的瞬云机场服务）。这些第三方网站拥有独立的隐私政策和条款，本站对其内容和隐私保护行为不承担任何责任。建议您在访问第三方网站时仔细阅读其隐私条款。"
+                  ? "本站包含大量指向第三方网站的链接（包括工具官网和推荐的云图机场服务）。这些第三方网站拥有独立的隐私政策和条款，本站对其内容和隐私保护行为不承担任何责任。建议您在访问第三方网站时仔细阅读其隐私条款。"
                   : l === "en"
-                  ? "This site contains numerous links to third-party websites (including official tool websites and the recommended ShunYun VPN service). These third-party sites have independent privacy policies and terms. We bear no responsibility for their content or privacy practices. We recommend carefully reading their privacy policies when visiting."
-                  : "يحتوي هذا الموقع على العديد من الروابط الخارجية لمواقع طرف ثالث (بما في ذلك المواقع الرسمية للأدوات وخدمة ShunYun VPN الموصى بها). تمتلك هذه المواقع سياسات خصوصية مستقلة تماماً، ولا نتحمل أي مسؤولية عن محتواها أو ممارسات الخصوصية الخاصة بها. ننصحك بقراءة سياسة الخصوصية الخاصة بها بعناية عند زيارتها."}
+                  ? "This site contains numerous links to third-party websites (including official tool websites and the recommended YunTu VPN service). These third-party sites have independent privacy policies and terms. We bear no responsibility for their content or privacy practices. We recommend carefully reading their privacy policies when visiting."
+                  : "يحتوي هذا الموقع على العديد من الروابط الخارجية لمواقع طرف ثالث (بما في ذلك المواقع الرسمية للأدوات وخدمة YunTu VPN الموصى بها). تمتلك هذه المواقع سياسات خصوصية مستقلة تماماً، ولا نتحمل أي مسؤولية عن محتواها أو ممارسات الخصوصية الخاصة بها. ننصحك بقراءة سياسة الخصوصية الخاصة بها بعناية عند زيارتها."}
               </p>
             </section>
           </div>

@@ -28,7 +28,7 @@ export async function generateMetadata({
   const article = NEWS.find((a) => a.slug === slug);
   if (!article) return {};
   return {
-    title: `${article.title[l]} | ${l === "zh" ? "出海工具箱" : l === "en" ? "Overseas Toolkit" : "صندوق أدوات المغتربين"}`,
+    title: article.title[l],
     description: article.summary[l],
     alternates: {
       canonical: `${SITE_URL}/${l}/news/${slug}`,
@@ -43,6 +43,7 @@ export async function generateMetadata({
       description: article.summary[l],
       type: "article",
       publishedTime: article.date,
+      modifiedTime: article.date,
     },
   };
 }
@@ -79,19 +80,33 @@ export default async function NewsDetailPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    headline: article.title[l],
-    description: article.summary[l],
-    datePublished: article.date,
-    dateModified: article.date,
-    author: { "@type": "Organization", name: l === "zh" ? "出海工具箱" : "Overseas Toolkit" },
-    publisher: {
-      "@type": "Organization",
-      name: l === "zh" ? "出海工具箱" : "Overseas Toolkit",
-      url: SITE_URL,
-    },
-    inLanguage: l === "zh" ? "zh-CN" : l === "en" ? "en-US" : "ar",
-    ...(article.sourceUrl ? { sameAs: article.sourceUrl } : {}),
+    "@graph": [
+      {
+        "@type": "NewsArticle",
+        headline: article.title[l],
+        description: article.summary[l],
+        datePublished: article.date,
+        dateModified: article.date,
+        image: `${SITE_URL}/og-image.png`,
+        author: { "@type": "Organization", name: l === "zh" ? "出海工具箱" : "Overseas Toolkit" },
+        publisher: {
+          "@type": "Organization",
+          name: l === "zh" ? "出海工具箱" : "Overseas Toolkit",
+          url: SITE_URL,
+        },
+        mainEntityOfPage: `${SITE_URL}/${l}/news/${slug}`,
+        inLanguage: l === "zh" ? "zh-CN" : l === "en" ? "en-US" : "ar",
+        ...(article.sourceUrl ? { sameAs: article.sourceUrl } : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: l === "zh" ? "首页" : l === "en" ? "Home" : "الرئيسية", item: `${SITE_URL}/${l}` },
+          { "@type": "ListItem", position: 2, name: l === "zh" ? "出海资讯" : l === "en" ? "News" : "الأخبار", item: `${SITE_URL}/${l}/news` },
+          { "@type": "ListItem", position: 3, name: article.title[l], item: `${SITE_URL}/${l}/news/${slug}` },
+        ],
+      },
+    ],
   };
 
   return (

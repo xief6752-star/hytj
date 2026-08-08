@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TOOLS } from "@/data/tools";
-import { UI_TEXT, AIRPORT_LINK, SITE_URL, type Lang } from "@/data/i18n";
+import { UI_TEXT, AIRPORT_GO, SITE_URL, type Lang } from "@/data/i18n";
+import { topicsWithTool, recommendedBrands } from "@/data/related";
+import { getPitfallsFor } from "@/data/tool-pitfalls";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AirportBanner from "@/components/AirportBanner";
@@ -32,31 +34,34 @@ export async function generateMetadata({
   const name = tool.name[l];
   const desc = tool.description[l];
 
-  const titleZh = `${name}使用教程｜${name}国内怎么用 - 外网黄页`;
-  const titleEn = `${name} Review & Tutorial | How to Use ${name} - Web Tools Directory`;
-  const titleAr = `شرح واستخدام ${name} | كيفية استخدام ${name} - دليل المواقع العالمية`;
+  const titleZh = `${name} 2026 国内使用教程 · 注册与加速指南`;
+  const titleEn = `${name} 2026 Guide — How to Sign Up, Use & Speed Up`;
+  const titleAr = `${name} 2026 — دليل التسجيل والاستخدام والتسريع`;
 
   return {
     title: l === "zh" ? titleZh : l === "en" ? titleEn : titleAr,
     description:
       l === "zh"
-        ? `${name}详细介绍：${desc} 创立于${tool.founded.slice(0,4)}年，创始人：${tool.founder}。含注册教程、使用技巧和常见问题。`
+        ? `2026 最新 ${name} 使用教程：${desc}。含国内访问方案、注册步骤、加速技巧与常见问题。创立于 ${tool.founded.slice(0,4)} 年。`
         : l === "en"
-        ? `Complete guide to ${name}: ${desc} Founded in ${tool.founded.slice(0,4)} by ${tool.founder}. Includes setup tutorial, tips, and FAQs.`
-        : `دليل شامل لـ ${name}: ${desc} تأسس في عام ${tool.founded.slice(0,4)} بواسطة ${tool.founder}. يشمل طريقة الإعداد والأسئلة الشائعة.`,
+        ? `2026 ${name} guide: ${desc} Includes sign-up steps, speed-up tips, and FAQs. Founded in ${tool.founded.slice(0,4)} by ${tool.founder}.`
+        : `دليل ${name} 2026: ${desc} يشمل خطوات التسجيل والوصول ونصائح التسريع. تأسس عام ${tool.founded.slice(0,4)} على يد ${tool.founder}.`,
     keywords:
       l === "zh"
         ? [
+            `${name} 2026`,
             `${name}使用教程`,
             `${name}国内怎么用`,
+            `${name}注册教程`,
+            `${name}加速`,
             `${name}是什么`,
             name,
             "科学上网",
-            "外网工具",
+            "出海工具",
           ]
         : l === "en"
-        ? [name, `how to use ${name}`, `${name} tutorial`, `${name} review`]
-        : [name, `كيفية استخدام ${name}`, `شرح موقع ${name}`, `دليل ${name}`],
+        ? [name, `${name} 2026`, `how to use ${name}`, `${name} tutorial`, `${name} sign up`, `${name} in China`]
+        : [name, `${name} 2026`, `كيفية استخدام ${name}`, `شرح موقع ${name}`, `دليل ${name}`],
     alternates: {
       canonical: `${SITE_URL}/${l}/tools/${slug}`,
       languages: {
@@ -259,13 +264,13 @@ export default async function ToolDetailPage({
                     {t.toolDetail.needVPN}
                     {" — "}
                     <a
-                      href={AIRPORT_LINK}
+                      href={AIRPORT_GO}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: "var(--primary-light)", fontWeight: 600 }}
                       id={`vpn-alert-cta-${slug}`}
                     >
-                      {lang === "zh" ? "推荐瞬云机场 →" : "Try ShunYun VPN →"}
+                      {lang === "zh" ? "推荐云图机场 →" : "Try YunTu VPN →"}
                     </a>
                   </span>
                 </div>
@@ -327,6 +332,52 @@ export default async function ToolDetailPage({
                   <p className="history-text">{tool.history[l]}</p>
                 </section>
 
+                {/* 常见踩坑 - GEO/E-E-A-T 核心：AI 引擎最爱抓这段实操内容 */}
+                {(() => {
+                  const pitfalls = getPitfallsFor(tool.slug, tool.category);
+                  if (pitfalls.length === 0) return null;
+                  return (
+                    <section className="detail-section" aria-labelledby="section-pitfalls">
+                      <h2 className="detail-section-title" id="section-pitfalls">
+                        <span className="detail-section-icon" aria-hidden="true">⚠️</span>
+                        {l === "zh" ? `使用 ${tool.name[l]} 的 3 个常见踩坑` : l === "en" ? `3 Common Pitfalls Using ${tool.name[l]}` : `3 عثرات شائعة عند استخدام ${tool.name[l]}`}
+                      </h2>
+                      <p style={{ fontSize: 14, color: "var(--text-muted)", marginBottom: 20, lineHeight: 1.65 }}>
+                        {l === "zh"
+                          ? "以下是社区反馈里最高频的三个坑，注册前先看，能省下大量试错时间。"
+                          : l === "en"
+                          ? "The three most-reported gotchas from the community. Read these before you sign up to skip the trial-and-error."
+                          : "أكثر ثلاث مشاكل شيوعاً من المجتمع. اقرأها قبل التسجيل لتوفير وقت التجربة."}
+                      </p>
+                      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                        {pitfalls.map((p, i) => (
+                          <article
+                            key={i}
+                            style={{
+                              padding: "18px 22px",
+                              background: "var(--bg-elevated)",
+                              border: "1px solid var(--border)",
+                              borderLeft: "4px solid #f59e0b",
+                              borderRadius: "var(--radius-md)",
+                            }}
+                          >
+                            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: "var(--text-primary)" }}>
+                              <span style={{ color: "#f59e0b", marginRight: 8 }}>#{i + 1}</span>
+                              {p.title[l]}
+                            </h3>
+                            <p style={{ fontSize: 14, lineHeight: 1.75, color: "var(--text-secondary)", marginBottom: 8 }}>
+                              {p.desc[l]}
+                            </p>
+                            <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--primary)", fontWeight: 600 }}>
+                              
+                            </p>
+                          </article>
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })()}
+
                 {/* FAQ */}
                 <section
                   className="detail-section"
@@ -340,6 +391,90 @@ export default async function ToolDetailPage({
                   </h2>
                   <FAQSection faqs={tool.faqs.map((f) => ({ q: f.q[l], a: f.a[l] }))} />
                 </section>
+
+                {/* Related Topics */}
+                {(() => {
+                  const relTopics = topicsWithTool(tool.slug);
+                  if (relTopics.length === 0) return null;
+                  return (
+                    <section className="detail-section" aria-labelledby="section-related-topics">
+                      <h2 className="detail-section-title" id="section-related-topics">
+                        <span className="detail-section-icon" aria-hidden="true">🎯</span>
+                        {l === "zh" ? "相关专题" : l === "en" ? "Related Topics" : "مواضيع ذات صلة"}
+                      </h2>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                        {relTopics.map((tp) => (
+                          <Link
+                            key={tp.slug}
+                            href={`/${l}/topics/${tp.slug}`}
+                            style={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              gap: 8,
+                              padding: "10px 16px",
+                              border: "1px solid var(--border)",
+                              borderRadius: "var(--radius-md)",
+                              textDecoration: "none",
+                              color: "var(--text-primary)",
+                              fontSize: 14,
+                              fontWeight: 600,
+                              background: "var(--bg-muted)",
+                            }}
+                          >
+                            <span aria-hidden="true">{tp.icon}</span>
+                            {tp.title[l]}
+                          </Link>
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })()}
+
+                {/* Recommended Airports */}
+                {(() => {
+                  const brands = recommendedBrands(undefined, 3);
+                  if (brands.length === 0) return null;
+                  return (
+                    <section className="detail-section" aria-labelledby="section-rec-brands">
+                      <h2 className="detail-section-title" id="section-rec-brands">
+                        <span className="detail-section-icon" aria-hidden="true">✈️</span>
+                        {l === "zh"
+                          ? `访问 ${tool.name[l]} 推荐机场`
+                          : l === "en"
+                          ? `Recommended Airports for ${tool.name[l]}`
+                          : `airports موصى بها لـ ${tool.name[l]}`}
+                      </h2>
+                      <p style={{ color: "var(--text-secondary)", marginBottom: 16, fontSize: 14 }}>
+                        {l === "zh"
+                          ? "以下机场均通过我们的稳定性、流媒体解锁、客户端兼容性三项硬测，评分 ≥ 9.2。"
+                          : l === "en"
+                          ? "All airports below pass our three-way test (stability, streaming unlock, client compatibility) with score ≥ 9.2."
+                          : "جميع airports أدناه اجتازت اختبارات الاستقرار وفتح البث وتوافق العملاء بتقييم ≥ 9.2."}
+                      </p>
+                      <div className="tools-grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
+                        {brands.map((b) => (
+                          <Link key={b.slug} href={`/${l}/brands/${b.slug}`} className="tool-card">
+                            <div className="tool-card-header">
+                              <div
+                                className="tool-card-logo"
+                                style={{ background: `${b.color}20` }}
+                                aria-hidden="true"
+                              >
+                                {b.logo}
+                              </div>
+                              <div style={{ marginLeft: "auto", fontSize: 12, color: "var(--primary)", fontWeight: 700 }}>
+                                ⭐ {b.reviewScore.toFixed(1)}
+                              </div>
+                            </div>
+                            <h3 className="tool-card-name">{b.name[l]}</h3>
+                            <p className="tool-card-tagline">{b.tagline[l]}</p>
+                            <p className="tool-card-desc">{b.shortDescription[l]}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    </section>
+                  );
+                })()}
 
                 {/* Related Tools */}
                 {related.length > 0 && (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AIRPORT_LINK, UI_TEXT } from "@/data/i18n";
+import { AIRPORT_GO, UI_TEXT } from "@/data/i18n";
 import type { Lang } from "@/data/i18n";
 
 interface Props {
@@ -12,12 +12,12 @@ export default function AirportBanner({ lang, variant = "banner" }: Props) {
 
   if (variant === "sidebar") {
     return (
-      <aside className="airport-sidebar" aria-label="瞬云机场推荐">
+      <aside className="airport-sidebar" aria-label="云图机场推荐">
         <div className="airport-sidebar-inner">
           <span className="airport-sidebar-icon">✈️</span>
           <div className="airport-sidebar-badge">{t.badge}</div>
           <h3 className="airport-sidebar-title">
-            {lang === "zh" ? "瞬云机场" : "ShunYun VPN"}
+            {lang === "zh" ? "云图机场" : "YunTu VPN"}
           </h3>
           <p className="airport-sidebar-subtitle">{t.subtitle}</p>
           <ul className="airport-sidebar-features" role="list">
@@ -29,9 +29,9 @@ export default function AirportBanner({ lang, variant = "banner" }: Props) {
             ))}
           </ul>
           <a
-            href={AIRPORT_LINK}
+            href={AIRPORT_GO}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="noopener noreferrer sponsored nofollow"
             className="btn-airport-sidebar"
             id="sidebar-airport-cta"
           >
@@ -47,7 +47,7 @@ export default function AirportBanner({ lang, variant = "banner" }: Props) {
   }
 
   return (
-    <section className="airport-banner" aria-label="瞬云机场推荐">
+    <section className="airport-banner" aria-label="云图机场推荐">
       <div className="airport-banner-grid" aria-hidden="true" />
       <div className="airport-banner-inner">
         <div className="airport-banner-content">
@@ -63,9 +63,9 @@ export default function AirportBanner({ lang, variant = "banner" }: Props) {
           </ul>
           <div className="airport-banner-cta">
             <a
-              href={AIRPORT_LINK}
+              href={AIRPORT_GO}
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel="noopener noreferrer sponsored nofollow"
               className="btn-airport-primary"
               id="banner-airport-cta"
             >
@@ -79,7 +79,7 @@ export default function AirportBanner({ lang, variant = "banner" }: Props) {
         <div className="airport-banner-visual" aria-hidden="true">
           <div className="airport-visual-circle">✈️</div>
           <p className="airport-visual-label">
-            {lang === "zh" ? "瞬云机场" : "ShunYun VPN"}
+            {lang === "zh" ? "云图机场" : "YunTu VPN"}
           </p>
         </div>
       </div>

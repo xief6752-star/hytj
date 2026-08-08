@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { type Lang } from "@/data/i18n";
-import { AIRPORT_LINK } from "@/data/i18n";
+import { AIRPORT_GO } from "@/data/i18n";
 
 interface Props {
   lang: Lang;
@@ -41,6 +41,15 @@ export default function Header({ lang, t }: Props) {
           <Link href={`/${lang}#tools`} onClick={() => setMenuOpen(false)}>
             {t.nav.tools}
           </Link>
+          <Link href={`/${lang}/topics`} onClick={() => setMenuOpen(false)}>
+            {lang === "zh" ? "专题" : lang === "en" ? "Topics" : "المواضيع"}
+          </Link>
+          <Link href={`/${lang}/brands`} onClick={() => setMenuOpen(false)}>
+            {lang === "zh" ? "机场测评" : lang === "en" ? "Airports" : "المطارات"}
+          </Link>
+          <Link href={`/${lang}/faq`} onClick={() => setMenuOpen(false)}>
+            {lang === "zh" ? "问题库" : lang === "en" ? "FAQ" : "الأسئلة"}
+          </Link>
           <Link href={`/${lang}/news`} onClick={() => setMenuOpen(false)}>
             {lang === "zh" ? "出海资讯" : lang === "en" ? "News" : "الأخبار"}
           </Link>
@@ -69,13 +78,13 @@ export default function Header({ lang, t }: Props) {
             )}
           </div>
           <a
-            href={AIRPORT_LINK}
+            href={AIRPORT_GO}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer sponsored"
             className="btn-airport-header"
             id="header-airport-cta"
           >
-            {t.airport.badge} {lang === "zh" ? "瞬云机场" : "ShunYun VPN"}
+            {t.airport.badge} {lang === "zh" ? "云图机场" : "YunTu VPN"}
           </a>
           <button
             className="header-menu-toggle"

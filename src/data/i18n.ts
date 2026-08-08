@@ -1,14 +1,49 @@
 export type Lang = "zh" | "en" | "ar";
 
 export const SITE_URL = "https://hytuijian.com";
-export const AIRPORT_NAME = "瞬云机场";
-export const AIRPORT_LINK = "https://ccc.jichang.best/#/register?code=mEftxeqb";
+export const SITE_YEAR = "2026";
+export const AIRPORT_NAME = "云图机场";
+export const AIRPORT_LINK = "https://vip.ytjcok.org/#/register?code=iV8ahCNE";
+/** 站内联盟跳转中间页，便于集中埋点/统一换链；实际外链由 /go/[brand] 转发 */
+export const AIRPORT_GO = "/go/yuntu";
+
+/** 联盟跳转品牌配置：新增品牌只需加一条 */
+export const BRAND_LINKS: Record<string, { url: string; label: string }> = {
+  yuntu:      { url: AIRPORT_LINK, label: "云图机场" },
+  shunyun:    { url: "https://ccc.jichang.best/#/register?code=MhKYAnsG&utm_source=hytuijian", label: "瞬云机场" },
+  huanyuyun:  { url: "https://huanyuyun.cc/#/register?code=CPBmzXgk&utm_source=hytuijian",    label: "寰宇云机场" },
+  wgetcloud:  { url: "https://wgetcloud.org/?utm_source=hytuijian",                            label: "WgetCloud 极速Cloud" },
+  tag:        { url: AIRPORT_LINK, label: "TAG 机场（推荐替代：云图）" },
+  yiyuan:     { url: AIRPORT_LINK, label: "一元机场（推荐更稳的替代：云图）" },
+  flyingbird: { url: "https://flyingbird.cc/?utm_source=hytuijian",                            label: "飞鸟机场" },
+  nexitally:  { url: "https://nexitally.com/?utm_source=hytuijian",                             label: "奶昔机场 Nexitally" },
+  yifen:      { url: AIRPORT_LINK,                                                              label: "一分机场（推荐替代云图）" },
+};
+
+/** 友情链接：对标勇哥博客、机场查等同垂类站，方便后续互链
+ *  修改说明：URL/name 直接改这里；新增就 push 一条 */
+export const FRIEND_LINKS: {
+  name: { zh: string; en: string; ar: string };
+  url: string;
+  note?: { zh: string; en: string; ar: string };
+}[] = [
+  {
+    name: { zh: "勇哥博客", en: "YongGe Blog", ar: "مدونة YongGe" },
+    url: "https://yongjichang.com/",
+    note: { zh: "机场评测与梯子推荐", en: "VPN reviews", ar: "مراجعات VPN" },
+  },
+  {
+    name: { zh: "机场查", en: "JichangCha", ar: "JichangCha" },
+    url: "https://www.jichangcha.com/",
+    note: { zh: "机场推荐榜单", en: "Airport rankings", ar: "تصنيفات المطارات" },
+  },
+];
 
 export const UI_TEXT = {
   zh: {
-    siteTitle: "出海工具箱",
-    siteTagline: "出海必备工具，一站全搞定",
-    siteDescription: "出海工具箱收录全球出海必备工具，提供详细功能介绍、注册教程和科学上网指南，助你高效出海。",
+    siteTitle: "出海工具箱 2026 - AI/开发/社交/科学上网工具推荐榜",
+    siteTagline: "2026 出海必备工具，一站全搞定",
+    siteDescription: "2026 年出海工具推荐榜：收录 ChatGPT、Claude、Gemini、YouTube、GitHub、Shopify 等 28+ 款出海必备工具，提供国内使用教程、注册指南、加速方案和科学上网攻略。",
     nav: {
       home: "首页",
       tools: "工具目录",
@@ -40,7 +75,7 @@ export const UI_TEXT = {
     airport: {
       badge: "🚀 推荐机场",
       title: "访问以上网站需要科学上网",
-      subtitle: "推荐使用瞬云机场 · 高速稳定 · 按需付费",
+      subtitle: "推荐使用云图机场 · 高速稳定 · 按需付费",
       features: ["超高速 IPLC 专线", "全平台客户端支持", "按月/季/年灵活付费", "不限设备同时在线", "7×24 小时客服"],
       cta: "立即注册免费试用",
       ctaSub: "注册即可获得试用流量",
@@ -68,13 +103,13 @@ export const UI_TEXT = {
       about: "关于我们",
       privacy: "隐私政策",
       contact: "联系我们",
-      copyright: "© 2025 出海工具箱 hytuijian.com · 仅供参考使用",
+      copyright: "© 2026 出海工具箱 hytuijian.com · 仅供参考使用",
     },
   },
   en: {
-    siteTitle: "Overseas Toolkit",
-    siteTagline: "The Essential Toolkit for Going Global",
-    siteDescription: "Overseas Toolkit curates the world's most popular tools for going global, with detailed feature guides, registration tutorials, and VPN tips.",
+    siteTitle: "Overseas Toolkit 2026 — AI, Dev, Social & VPN Guide",
+    siteTagline: "The 2026 Essential Toolkit for Going Global",
+    siteDescription: "Overseas Toolkit 2026: 28+ curated tools for going global — ChatGPT, Claude, Gemini, YouTube, GitHub, Shopify — with step-by-step guides, sign-up tutorials, and VPN tips.",
     nav: {
       home: "Home",
       tools: "Tools",
@@ -106,7 +141,7 @@ export const UI_TEXT = {
     airport: {
       badge: "🚀 Recommended VPN",
       title: "A VPN is required to access these sites",
-      subtitle: "We recommend ShunYun VPN · Fast & Stable · Pay-as-you-go",
+      subtitle: "We recommend YunTu VPN · Fast & Stable · Pay-as-you-go",
       features: ["Ultra-fast IPLC lines", "Multi-platform clients", "Monthly/Quarterly/Annual plans", "Unlimited simultaneous devices", "24/7 customer support"],
       cta: "Sign Up for Free Trial",
       ctaSub: "Get trial traffic upon registration",
@@ -134,13 +169,13 @@ export const UI_TEXT = {
       about: "About",
       privacy: "Privacy Policy",
       contact: "Contact",
-      copyright: "© 2025 Overseas Toolkit hytuijian.com · For reference only",
+      copyright: "© 2026 Overseas Toolkit hytuijian.com · For reference only",
     },
   },
   ar: {
-    siteTitle: "صندوق أدوات المغتربين",
-    siteTagline: "أدواتك الأساسية للعمل والتواصل عالمياً",
-    siteDescription: "صندوق أدوات المغتربين يحتوي على أشهر الأدوات والخدمات العالمية، ويقدم تفاصيل حول ميزاتها وطريقة تسجيلها واستخدامها.",
+    siteTitle: "صندوق أدوات المغتربين 2026 — الذكاء الاصطناعي والتطوير والتواصل و VPN",
+    siteTagline: "أدواتك الأساسية للعمل والتواصل عالمياً في 2026",
+    siteDescription: "صندوق أدوات المغتربين 2026: 28+ أداة مختارة للعمل عالمياً — ChatGPT، Claude، Gemini، YouTube، GitHub، Shopify — مع شروحات خطوة بخطوة ودليل التسجيل ونصائح VPN.",
     nav: {
       home: "الرئيسية",
       tools: "دليل الأدوات",
@@ -172,7 +207,7 @@ export const UI_TEXT = {
     airport: {
       badge: "🚀 شبكة VPN الموصى بها",
       title: "يتطلب الوصول إلى هذه المواقع شبكة VPN (تجاوز الحجب)",
-      subtitle: "نوصي باستخدام ShunYun VPN · سرعة عالية واستقرار · دفع مرن حسب الاستخدام",
+      subtitle: "نوصي باستخدام YunTu VPN · سرعة عالية واستقرار · دفع مرن حسب الاستخدام",
       features: ["خطوط IPLC فائقة السرعة", "دعم تطبيقات جميع الأنظمة", "خطط دفع مرنة (شهري/ربع سنوي/سنوي)", "أجهزة غير محدودة متصلة في نفس الوقت", "دعم عملاء على مدار الساعة 24/7"],
       cta: "سجل الآن للتجربة المجانية",
       ctaSub: "احصل على حركة مرور تجريبية مجانية عند التسجيل",
@@ -200,7 +235,7 @@ export const UI_TEXT = {
       about: "حول الموقع",
       privacy: "سياسة الخصوصية",
       contact: "اتصل بنا",
-      copyright: "© 2025 صندوق أدوات المغتربين hytuijian.com · للمرجعية فقط",
+      copyright: "© 2026 صندوق أدوات المغتربين hytuijian.com · للمرجعية فقط",
     },
   },
 };
