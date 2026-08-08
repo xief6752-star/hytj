@@ -100,6 +100,28 @@ export default async function BrandsIndexPage({
         <div className="tool-detail-body">
           <div className="container">
             <div style={{ maxWidth: 900, margin: "0 auto" }}>
+
+              {/* SEO 内容段 - E-E-A-T 权威信号 */}
+              <div style={{ marginBottom: 36, padding: "28px 32px", background: "var(--bg-elevated)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14 }}>
+                  {l === "zh" ? "如何选择 2026 年最适合的机场？" : l === "en" ? "How to Choose the Right Airport in 2026" : "كيفية اختيار airport المناسب في 2026؟"}
+                </h2>
+                <p style={{ fontSize: 15, lineHeight: 1.85, color: "var(--text-secondary)", marginBottom: 14 }}>
+                  {l === "zh"
+                    ? "2026 年科学上网工具（俗称「机场」「梯子」「魔法」）市场分层清晰。从线路类型看，IPLC / IEPL 国际专线是晚高峰稳定性的分水岭：专线机场掉包率可压到 0.5% 以下，普通中转机场晚高峰经常缓冲到无法观看。从价格区间看，中端专线 ¥15-30/月，高端 IEPL 或 AWS 加速 ¥80+/月，超低价 ¥1-5/月的机场跑路风险普遍偏高。"
+                    : l === "en"
+                    ? "In 2026, the VPN airport market is clearly stratified by line type. IPLC / IEPL dedicated lines are the dividing line for peak-hour stability: dedicated-line airports can keep packet loss below 0.5%, while generic transit airports often become unusable during peak hours. Price-wise: mid-tier dedicated lines run ¥15-30/mo, high-end IEPL or AWS-accelerated run ¥80+/mo, and ultra-cheap ¥1-5/mo airports carry a noticeably higher exit-scam risk."
+                    : "في 2026، سوق VPN (airport) منقسم بوضوح حسب نوع الخط. خطوط IPLC/IEPL المخصصة هي خط الفصل في استقرار الذروة: الـairports المخصصة تحافظ على فقد حزم أقل من 0.5٪، بينما خوادم النقل العادية كثيراً ما تصبح غير قابلة للاستخدام في الذروة."}
+                </p>
+                <p style={{ fontSize: 15, lineHeight: 1.85, color: "var(--text-secondary)", margin: 0 }}>
+                  {l === "zh"
+                    ? "本页收录的 9 家机场评测采用「晚高峰实测下载速度 + 流媒体解锁能力（Netflix / Disney+ / ChatGPT 原生 IP）+ 客户端兼容性（Clash / Shadowrocket / Sing-Box 等）+ 老用户长期口碑」四条硬指标，10 分制，每周复核一次。评分 ≥ 9.6 为顶级档（奶昔、寰宇云、飞鸟、WgetCloud），9.2 为高性价比档（云图、瞬云），5.0 左右为风险警示档（一元、一分），仅作为搜索用户的安全提示，不做商业推广。"
+                    : l === "en"
+                    ? "The 9 airports reviewed on this page are evaluated on four hard metrics: peak-hour measured download speed + streaming unlock capability (Netflix / Disney+ / ChatGPT native IP) + client compatibility (Clash / Shadowrocket / Sing-Box etc.) + long-term user reputation. Scoring is on a 10-point scale, re-audited weekly. Scores ≥ 9.6 are the top tier (Nexitally, HuanYuYun, FlyingBird, WgetCloud), 9.2 are value picks (YunTu, ShunYun), and ~5.0 are risk warnings (YiYuan, YiFen) included only as safety notices, not commercial recommendations."
+                    : "الـ9 airports المراجَعة في هذه الصفحة تُقيَّم بأربعة معايير صارمة: سرعة التنزيل المقاسة في الذروة + قدرة فتح البث + توافق العملاء + سمعة المستخدمين على المدى الطويل. التقييم من 10 نقاط، يُعاد التدقيق أسبوعياً."}
+                </p>
+              </div>
+
               <div className="tools-grid" style={{ gridTemplateColumns: "1fr", gap: 20 }}>
                 {BRANDS.map((b) => (
                   <Link key={b.slug} href={`/${l}/brands/${b.slug}`} className="tool-card" style={{ padding: 28 }}>

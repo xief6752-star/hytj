@@ -111,6 +111,25 @@ export default async function TopicsIndexPage({
         </div>
 
         <div className="container" style={{ padding: "48px 24px 80px" }}>
+
+          {/* SEO 内容段 */}
+          <div style={{ maxWidth: 860, margin: "0 auto 36px", padding: "24px 28px", background: "var(--bg-elevated)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)" }}>
+            <p style={{ fontSize: 15, lineHeight: 1.85, color: "var(--text-secondary)", marginBottom: 12 }}>
+              {l === "zh"
+                ? "出海场景千变万化，单靠「工具目录」找不到完整答案。本栏目按使用意图把工具重新分组——ChatGPT 国内使用、AI 绘画全家桶、程序员提速、YouTube 视频加速、海外漫剧短剧 APP、跨境电商、设计师工具、留学学习——每个专题聚合 3-6 个经过验证的工具，配上注册路径、加速方案和常见踩坑，让你一次找到完整解决方案。"
+                : l === "en"
+                ? "No single tool index covers every overseas use case end-to-end. This section regroups tools by intent — ChatGPT in China, AI image generation, developer acceleration, YouTube speed-up, overseas short-drama apps, cross-border e-commerce, designer tools, online learning — each hub bundles 3-6 verified tools with sign-up paths, speed-up guides, and common pitfalls, so you get a complete solution in one read."
+                : "لا يغطي دليل الأدوات كل حالة استخدام من البداية للنهاية. هذا القسم يُعيد تجميع الأدوات حسب النية — ChatGPT في الصين، توليد الصور، تسريع المطورين، YouTube، تطبيقات الدراما القصيرة، التجارة الإلكترونية، أدوات المصممين، التعلم — كل موضوع يجمع 3-6 أدوات مع مسارات التسجيل والتسريع والمشاكل الشائعة."}
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.85, color: "var(--text-secondary)", margin: 0 }}>
+              {l === "zh"
+                ? "注意：本专题内大多数工具在国内无法直连，需要科学上网工具（机场/VPN）配合。每个专题页内都有推荐机场方案，或直接查看 → 机场推荐榜。"
+                : l === "en"
+                ? "Note: Most tools in these hubs are not directly accessible from mainland China and require a VPN/airport. Each topic page includes a recommended airport setup, or see the airport rankings directly."
+                : "ملاحظة: معظم الأدوات في هذه المواضيع غير متاحة مباشرة من الصين وتتطلب VPN/airport. كل صفحة موضوع تتضمن توصية airport مناسبة."}
+            </p>
+          </div>
+
           <div className="tools-grid">
             {TOPICS.map((topic) => (
               <Link

@@ -177,6 +177,55 @@ export default async function TopicDetailPage({
                   <p className="overview-text">{topic.intro[l]}</p>
                 </section>
 
+                {/* 工具全攻略 — SEO 内容扩充：对每个工具的定位做一句话摘要 + 为什么需要机场 */}
+                {topicTools.length > 0 && (
+                  <section className="detail-section">
+                    <h2 className="detail-section-title">
+                      <span className="detail-section-icon">📋</span>
+                      {l === "zh" ? "本专题工具使用要点" : l === "en" ? "Key Points for Each Tool" : "نقاط رئيسية لكل أداة"}
+                    </h2>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                      {topicTools.map((tool) => (
+                        <div
+                          key={tool.slug}
+                          style={{
+                            padding: "16px 20px",
+                            background: "var(--bg-muted)",
+                            borderRadius: "var(--radius-md)",
+                            border: "1px solid var(--border)",
+                          }}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6, flexWrap: "wrap" }}>
+                            <span style={{ fontSize: 22 }}>{tool.logo}</span>
+                            <Link
+                              href={`/${l}/tools/${tool.slug}`}
+                              style={{ fontWeight: 700, fontSize: 16, color: "var(--primary)", textDecoration: "none" }}
+                            >
+                              {tool.name[l]}
+                            </Link>
+                            <span style={{ fontSize: 12, color: "var(--text-muted)", background: "var(--bg-elevated)", padding: "2px 8px", borderRadius: 999, border: "1px solid var(--border)" }}>
+                              {tool.category}
+                            </span>
+                          </div>
+                          <p style={{ fontSize: 14, lineHeight: 1.7, color: "var(--text-secondary)", margin: 0 }}>
+                            {tool.tagline[l]} — {tool.description[l]}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    <div style={{ marginTop: 20, padding: "16px 20px", background: "rgba(249,115,22,0.06)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: "var(--radius-md)", fontSize: 14, lineHeight: 1.75, color: "var(--text-secondary)" }}>
+                      <strong style={{ color: "var(--primary)" }}>
+                        {l === "zh" ? "🔒 科学上网提示：" : l === "en" ? "🔒 VPN Note: " : "🔒 ملاحظة VPN: "}
+                      </strong>
+                      {l === "zh"
+                        ? `本专题内的 ${topicTools.filter(t => ["ai","social","dev","video","ecommerce"].includes(t.category)).length} 款主要工具在国内均需科学上网访问。推荐使用 IPLC 专线机场（如云图机场、飞鸟机场），晚高峰稳定性远优于普通中转方案。强烈不推荐使用超低价「一分/一元机场」，跑路风险高且速度不稳定。`
+                        : l === "en"
+                        ? `Most of the ${topicTools.length} tools in this topic require a VPN from mainland China. We recommend IPLC dedicated-line airports (YunTu, FlyingBird etc.) for stable peak-hour performance far better than generic transit setups. Ultra-cheap '1-cent/1-yuan' airports are strongly not recommended due to exit-scam risk and speed instability.`
+                        : `معظم الأدوات في هذا الموضوع تتطلب VPN من الصين. نوصي بخطوط IPLC مخصصة (YunTu, FlyingBird) لأداء مستقر في الذروة. لا نوصي الـairports الرخيصة جداً بسبب خطر الإغلاق.`}
+                    </div>
+                  </section>
+                )}
+
                 {topicTools.length > 0 && (
                   <section className="detail-section">
                     <h2 className="detail-section-title">
