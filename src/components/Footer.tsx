@@ -96,6 +96,7 @@ export default function Footer({ lang }: Props) {
             <Link href={`/${lang}/topics`}>{lang === "zh" ? "专题" : lang === "en" ? "Topics" : "المواضيع"}</Link>
             <Link href={`/${lang}/brands`}>{lang === "zh" ? "机场测评" : lang === "en" ? "Airports" : "المطارات"}</Link>
             <Link href={`/${lang}/faq`}>{lang === "zh" ? "问题库" : lang === "en" ? "FAQ" : "الأسئلة"}</Link>
+            <Link href={`/${lang}/sitemap`}>{lang === "zh" ? "网站地图" : lang === "en" ? "Sitemap" : "خريطة الموقع"}</Link>
             <Link href={`/${lang}/news`}>{lang === "zh" ? "出海资讯" : lang === "en" ? "News" : "الأخبار"}</Link>
             <Link href={`/${lang}/about`}>{t.footer.about}</Link>
             <Link href={`/${lang}/privacy`}>{t.footer.privacy}</Link>
