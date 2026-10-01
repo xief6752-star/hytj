@@ -3,7 +3,7 @@ export type Lang = "zh" | "en" | "ar";
 export const SITE_URL = "https://hytuijian.com";
 export const SITE_YEAR = "2026";
 export const AIRPORT_NAME = "云图机场";
-export const AIRPORT_LINK = "https://vip.ytjcok.org/#/register?code=iV8ahCNE";
+export const AIRPORT_LINK = "https://super.ytjcok.org/#/register?code=iV8ahCNE";
 /** 站内联盟跳转中间页，便于集中埋点/统一换链；实际外链由 /go/[brand] 转发 */
 export const AIRPORT_GO = "/go/yuntu";
 
