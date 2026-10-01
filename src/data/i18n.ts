@@ -10,7 +10,7 @@ export const AIRPORT_GO = "/go/yuntu";
 /** 联盟跳转品牌配置：新增品牌只需加一条 */
 export const BRAND_LINKS: Record<string, { url: string; label: string }> = {
   yuntu:      { url: AIRPORT_LINK, label: "云图机场" },
-  shunyun:    { url: "https://ccc.jichang.best/#/register?code=MhKYAnsG&utm_source=hytuijian", label: "瞬云机场" },
+  shunyun:    { url: "https://ddd.jichang.best/#/register?code=MhKYAnsG&utm_source=hytuijian", label: "瞬云机场" },
   huanyuyun:  { url: "https://huanyuyun.cc/#/register?code=CPBmzXgk&utm_source=hytuijian",    label: "寰宇云机场" },
   wgetcloud:  { url: "https://wgetcloud.org/?utm_source=hytuijian",                            label: "WgetCloud 极速Cloud" },
   tag:        { url: AIRPORT_LINK, label: "TAG 机场（推荐替代：云图）" },
