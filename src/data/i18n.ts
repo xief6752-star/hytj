@@ -43,7 +43,7 @@ export const UI_TEXT = {
   zh: {
     siteTitle: "出海工具箱 2026 - AI/开发/社交/科学上网工具推荐榜",
     siteTagline: "2026 出海必备工具，一站全搞定",
-    siteDescription: "2026 年出海工具推荐榜：收录 ChatGPT、Claude、Gemini、YouTube、GitHub、Shopify 等 28+ 款出海必备工具，提供国内使用教程、注册指南、加速方案和科学上网攻略。",
+    siteDescription: "2026 年出海工具推荐榜 + 机场评测：收录 ChatGPT、Claude、Gemini、YouTube、GitHub、Shopify、Midjourney、Netflix 等 28+ 款出海必备工具，提供国内访问教程、注册指南、机场加速方案和科学上网攻略，附云图机场等稳定/便宜/专线机场实测评测。",
     nav: {
       home: "首页",
       tools: "工具目录",

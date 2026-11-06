@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oE 'Claude.{0,30}Perplexity' .next/server/app/zh/compare/claude-vs-perplexity.html)"
+    ]
+  }
+}

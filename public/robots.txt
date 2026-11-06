@@ -1,0 +1,32 @@
+# robots.txt for hytuijian.com
+# 2026 出海工具箱 - 允许所有搜索引擎爬取
+
+User-agent: *
+Allow: /
+
+# 特别欢迎的搜索引擎
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Sitemap 位置（主索引 + 分语言版本）
+Sitemap: https://hytuijian.com/sitemap-index.xml
+Sitemap: https://hytuijian.com/sitemap.xml
+Sitemap: https://hytuijian.com/sitemap-zh.xml
+Sitemap: https://hytuijian.com/sitemap-en.xml
+Sitemap: https://hytuijian.com/sitemap-ar.xml
+
+# 爬取速度建议
+Crawl-delay: 0
+
+# 禁止爬取的路径（如有需要）
+# Disallow: /api/
+# Disallow: /_next/static/

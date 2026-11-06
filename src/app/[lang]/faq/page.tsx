@@ -29,10 +29,10 @@ export async function generateMetadata({
     title,
     description:
       l === "zh"
-        ? "2026 出海工具箱常见问题库：ChatGPT / Claude / YouTube / Shopify 等 20+ 工具的国内使用、注册、支付、加速方案 100+ 高频问题集中解答，附机场推荐。"
+        ? "2026 出海工具箱常见问题库：ChatGPT / Claude / Gemini / YouTube / GitHub / Shopify / Midjourney / Netflix 等 28+ 款出海工具的国内使用方法、账号注册流程、支付方式选择、机场加速配置、科学上网方案 100+ 条高频问题集中解答，附稳定/便宜/专线机场推荐榜与云图机场实测评测。"
         : l === "en"
-        ? "The 2026 Overseas Toolkit FAQ hub: 100+ high-frequency questions on how to use ChatGPT, Claude, YouTube, Shopify and 20+ tools from China, with sign-up, payment, and VPN tips."
-        : "مركز الأسئلة الشائعة 2026 لأدوات المغتربين: أكثر من 100 سؤال عن استخدام ChatGPT و Claude و YouTube وغيرها من الصين، مع نصائح التسجيل والدفع والـVPN.",
+        ? "The 2026 Overseas Toolkit FAQ hub: 100+ frequently asked questions covering how to access and use ChatGPT, Claude, Gemini, YouTube, GitHub, Shopify, Midjourney, Netflix and 28+ overseas tools from mainland China, with detailed guides on account registration, payment methods, VPN/airport setup, plus stable/affordable/dedicated-line airport rankings and YunTu VPN real-world reviews."
+        : "مركز الأسئلة الشائعة 2026 لأدوات المغتربين: أكثر من 100 سؤال شائع يغطي كيفية الوصول واستخدام ChatGPT و Claude و Gemini و YouTube و GitHub و Shopify و Midjourney و Netflix وأكثر من 28 أداة من الصين القارية، مع أدلة مفصلة حول التسجيل وطرق الدفع وإعداد VPN/airport، بالإضافة إلى تصنيفات airports المستقرة/بأسعار معقولة/المخصصة ومراجعات YunTu VPN الحقيقية.",
     keywords: l === "zh"
       ? ["出海工具常见问题", "chatgpt 常见问题", "科学上网常见问题", "机场推荐 faq", "2026 出海 faq"]
       : ["overseas tools faq", "chatgpt faq", "china vpn faq", "2026 tools faq"],

@@ -44,10 +44,10 @@ export async function generateMetadata({
     title,
     description:
       l === "zh"
-        ? `${name}真实评测：2026 年晚高峰测速、流媒体解锁验证、专线路由测试和价格分析，附购买链接与常见问题。`
+        ? `${name} 2026 年真实深度评测：晚高峰实测下载速度、Netflix/Disney+/ChatGPT 流媒体原生解锁验证、IPLC/IEPL 专线路由测试、套餐价格性价比分析、客户端兼容性测试（Clash/Shadowrocket/Sing-Box 等），附购买注册链接、使用教程与常见问题解答。`
         : l === "en"
-        ? `${name} independent review: 2026 peak-hour speed tests, streaming unlock verification, dedicated-line routing, pricing analysis, and FAQ.`
-        : `مراجعة ${name} 2026: اختبارات سرعة، فتح البث، مسارات مخصصة، أسعار، أسئلة شائعة.`,
+        ? `${name} in-depth 2026 review: real-world peak-hour download speed tests, Netflix/Disney+/ChatGPT native streaming unlock verification, IPLC/IEPL dedicated-line routing tests, pricing value analysis, client compatibility testing (Clash/Shadowrocket/Sing-Box etc.), with sign-up links, setup guides and FAQs.`
+        : `مراجعة ${name} 2026 المتعمقة: اختبارات سرعة التنزيل الحقيقية في الذروة، التحقق من فتح بث Netflix/Disney+/ChatGPT الأصلي، اختبارات مسارات IPLC/IEPL المخصصة، تحليل قيمة الأسعار، واختبار توافق العملاء، مع روابط التسجيل والأدلة والأسئلة الشائعة.`,
     keywords: l === "zh" ? [
       `${name}`, `${name}评测`, `${name}怎么样`, `${name}稳定吗`,
       "2026 机场推荐", "IPLC 机场", "梯子推荐", "机场评测",

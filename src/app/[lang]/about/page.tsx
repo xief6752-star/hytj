@@ -27,10 +27,10 @@ export async function generateMetadata({
 
   const description =
     lang === "zh"
-      ? "出海工具箱由人工研究撰写，专为出海工作者和海外华人提供AI、社交、开发、视频、办公、电商、学习等全球工具的中文一站式导航，内容定期更新、事实核查。"
+      ? "出海工具箱由人工研究撰写和定期更新，专为出海工作者、海外华人和跨境创业者提供 AI（ChatGPT/Claude/Gemini/Midjourney）、社交媒体（X/LinkedIn/Instagram）、开发工具（GitHub/Notion）、视频平台（YouTube/Netflix）、办公协作（Slack/Figma）、电商金融（Shopify/PayPal）、学习资源（Coursera/Duolingo）等 28+ 款全球工具的中文一站式导航、国内访问教程、注册指南与机场加速方案，内容经过事实核查。"
       : lang === "en"
-      ? "Overseas Toolbox is a human-curated, regularly updated directory for Chinese overseas workers covering AI, social, dev, video, office, e-commerce and learning tools — with trilingual guides."
-      : "صندوق أدوات المغتربين دليل بشري الإنشاء ومحدَّث بانتظام يغطي أدوات الذكاء الاصطناعي والتواصل الاجتماعي والتطوير والفيديو والمكتب والتجارة الإلكترونية والتعلم للعمال الصينيين في الخارج.";
+      ? "Overseas Toolbox is a human-curated, fact-checked, and regularly updated directory designed for Chinese overseas workers, expats, and cross-border entrepreneurs. Covers 28+ global tools across AI (ChatGPT/Claude/Gemini/Midjourney), social media (X/LinkedIn/Instagram), dev tools (GitHub/Notion), video platforms (YouTube/Netflix), office collaboration (Slack/Figma), e-commerce & finance (Shopify/PayPal), and learning resources (Coursera/Duolingo) — with trilingual guides, China access tutorials, registration steps, and VPN/airport setup recommendations."
+      : "صندوق أدوات المغتربين دليل منسق بشرياً، محقق من الحقائق، ومحدَّث بانتظام مصمم للعمال الصينيين في الخارج والمغتربين ورواد الأعمال عبر الحدود. يغطي أكثر من 28 أداة عالمية عبر الذكاء الاصطناعي (ChatGPT/Claude/Gemini/Midjourney)، ووسائل التواصل الاجتماعي (X/LinkedIn/Instagram)، وأدوات التطوير (GitHub/Notion)، ومنصات الفيديو (YouTube/Netflix)، والتعاون المكتبي (Slack/Figma)، والتجارة الإلكترونية والتمويل (Shopify/PayPal)، ومصادر التعلم (Coursera/Duolingo) — مع أدلة ثلاثية اللغة وشروحات الوصول من الصين وخطوات التسجيل وتوصيات إعداد VPN/airport.";
 
   return {
     title,

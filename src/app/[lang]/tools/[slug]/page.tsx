@@ -42,10 +42,10 @@ export async function generateMetadata({
     title: l === "zh" ? titleZh : l === "en" ? titleEn : titleAr,
     description:
       l === "zh"
-        ? `2026 最新 ${name} 使用教程：${desc}。含国内访问方案、注册步骤、加速技巧与常见问题。创立于 ${tool.founded.slice(0,4)} 年。`
+        ? `${name} 2026 最新完整使用教程：${desc}。包含国内访问方案、账号注册步骤、机场加速配置、支付方式选择、常见问题解答与实用技巧分享。创立于 ${tool.founded.slice(0,4)} 年，由 ${tool.founder} 创建，已成为出海必备工具之一。`
         : l === "en"
-        ? `2026 ${name} guide: ${desc} Includes sign-up steps, speed-up tips, and FAQs. Founded in ${tool.founded.slice(0,4)} by ${tool.founder}.`
-        : `دليل ${name} 2026: ${desc} يشمل خطوات التسجيل والوصول ونصائح التسريع. تأسس عام ${tool.founded.slice(0,4)} على يد ${tool.founder}.`,
+        ? `Complete ${name} 2026 guide: ${desc} Covers China access setup, account registration, VPN/airport configuration, payment methods, FAQs and practical tips. Founded in ${tool.founded.slice(0,4)} by ${tool.founder}, now an essential tool for global work.`
+        : `دليل ${name} 2026 الشامل: ${desc} يغطي إعداد الوصول من الصين والتسجيل وتكوين VPN/airport وطرق الدفع والأسئلة الشائعة والنصائح العملية. تأسس عام ${tool.founded.slice(0,4)} على يد ${tool.founder}، أصبح الآن أداة أساسية للعمل العالمي.`,
     keywords:
       l === "zh"
         ? [
