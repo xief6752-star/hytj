@@ -17,10 +17,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // 启用 SWC minify（更快的代码压缩）
-  swcMinify: true,
-
-  // 压缩配置
+  // 压缩配置（SWC minify 在 Next.js 16+ 默认启用）
   compress: true,
 
   // 生产环境优化
